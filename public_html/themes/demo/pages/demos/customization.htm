@@ -1,0 +1,49 @@
+title = "Customization"
+url = "/demo/customization"
+layout = "default"
+is_hidden = 0
+==
+<?php
+?>
+==
+<div class="jumbotron title-js">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>Customization</h1>
+                <p>Learn how to customize your gallery!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+	<p>You can customize your gallery in various ways:
+		<ul>
+			<li>You can adjust how your gallery looks by adding a custom CSS to your site, much like how we added CSS in the swiper demos. Unfortunately, a full tutorial on CSS is outside of the scope of this demo, although I highly recommend <a href="https://css-tricks.com">css-tricks.com!</a></li>
+			<li>You can use the "component inspector" to set some basic options for each gallery, additionally, you can include custom options that the plugin adds to the generated script. Again, we covered this in some of the demo pages.</li>
+			<li>You can adjust additional settings in the plugin back-end page, you can even completely override the generated script there.</li>
+			<li>Finally, you can override component partials in your theme</li>
+		</ul>
+		For a detailed look at all of the above, please refer to the <a href="https://its.zensoft.hu/books/november-gallery-cookbook">November Gallery Docs</a>.
+	</p>
+	
+	<br />
+
+    <!-- Wide Layout -->
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Setting Script Options
+    </p>    
+	<p>In each demo, you were also able to read about some possible additional options you can set on your galleries. It is important to understand which underlying JS library is used for each gallery. Currently, all galleries except for Swiper use UniteGallery. Swiper uses...Swiper.</p>
+	<p>So, for example, if you wish to make sure autoplay resumes even if there is any user interaction, then you can read up on the autoplay options in the <a href="https://idangero.us/swiper/api/#autoplay">Swiper API documentation</a>. You can then set this in OctoberCMS in the component inspector for the Slider component, in the "Additional Swiper Options" parameter: <code>autoplay: {disableOnInteraction=false}</code></p>
+	<p>Similarly, if you wish to disable the "full-screen" option on the UniteGallery slider, you can find the relevant option on the <a href="http://unitegallery.net/index.php?page=slider-options">UniteGallery Slider docs</a>. You can then set this in the  component inspector for the Embedded Gallery component in "Script options" parameter: <code>slider_enable_fullscreen_button: false</code></p>
+	<br>
+	    
+    <br />
+    
+    <div class="text-center">
+        <p><a href="{{ 'cookbook/blog-page'|page({ slug: 'november-gallery-in-a-blog-post' }) }}" class="btn btn-lg btn-default">Continue to Blog Page</a></p>
+    </div>
+
+</div>

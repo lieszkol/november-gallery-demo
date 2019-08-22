@@ -1,0 +1,82 @@
+title = "Blog Entry"
+url = "/blog/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = 404
+
+[embeddedGallery]
+maxItems = 100
+mediaFolder = "<post>"
+galleryLayout = "gallery_carousel"
+==
+{% put styles %}
+<style>
+	dl {
+    	display: grid;
+      	grid-template-columns: max-content 1rem auto;
+    }
+    dl dt {
+    	grid-column-start: 1;
+    }
+    dl dd {
+    	grid-column-start: 3;
+    }
+</style>
+{% endput %}
+
+<div class="jumbotron title-js">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>{{ post.title }}</h1>
+                {% if post.excerpt %}
+        		    <p>{{ post.excerpt }}</p>
+        		{% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    {% if post %}
+        <aside>
+        	<div>
+        	    <dl>
+        	        {% if post.user.last_name %}<dt>Photographer:</dt><dd>{{ post.user.last_name }} {{ post.user.first_name }}</dd>{% endif %}
+                    {% if post.published_at %}<dt>Posted:</dt><dd>{{ post.published_at|date('Y') }}</dd>{% endif %}
+        	    </dl>
+        	</div>
+        </aside>
+        <div style="width: 100%">
+    		{% component 'embeddedGallery' %}
+    	</div>
+		<div class="content" style="column-count: 2; column-gap: 40px;">
+		    {{ post.content_html|raw }}
+		</div>
+        <div>	
+        {% if post.featured_images.count %}
+            <div class="featured-images text-center">
+                {% for image in post.featured_images %}
+                    <p>
+                        <img
+                            data-src="{{ image.filename }}"
+                            src="{{ image.path }}"
+                            alt="{{ image.description }}"
+                            style="max-width: 100%" />
+                    </p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        </div>
+	{% endif %}
+	    
+    <br />
+    
+    <div class="text-center">
+        <p><a href="/" class="btn btn-lg btn-default">Back to the Landing Page</a></p>
+    </div>
+
+</div>

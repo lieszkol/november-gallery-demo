@@ -1,0 +1,204 @@
+title = "Popup Lightbox"
+url = "/demo/popup-lightbox"
+layout = "default"
+is_hidden = 0
+
+[popupLightbox]
+maxItems = 100
+mediaFolder = "travels-and-landscapes"
+lightboxType = "lightbox_type_wide"
+attachTo = "#gallery-button"
+
+[popupLightbox popupLightbox2]
+maxItems = 100
+mediaFolder = "travels-and-landscapes"
+lightboxType = "lightbox_type_compact"
+attachTo = "#gallery-button-2"
+additionalLightboxOptions = "lightbox_show_numbers: false,lightbox_slider_image_border_width: 20"
+==
+<?php
+function onTest()
+{
+}
+?>
+==
+<div class="jumbotron title-js">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>Popup Lightbox</h1>
+                <p>Use this component to create a pop-up lightbox of images that can be opened from a link or button (or any other clickable component) on the page. Two styles are available: "Wide" and "Compact".</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <!-- Wide Layout -->
+    <div class="page-header">
+        <h2>"Wide" Layout</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Gallery</h3>
+        </div>
+        <div class="panel-body">
+            {% component 'popupLightbox' %}
+            <button id="gallery-button" class="btn btn-primary">Click me!</button>
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Media Folder</td><td>travels-and-landscapes</td></tr>
+                <tr><td>Lightbox Type</td><td>Wide</td></tr>
+                <tr><td>Attach-to</td><td>#gallery-button</td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+            <pre><code>{% filter escape %}<button id="gallery-button" class="btn btn-primary">Click me!</button>{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: We set the "Attach-to" property in the component inspector to the ID of the button element that we want to trigger the gallery from. The script will then add an "on-click" event handler to this button that opens the gallery when it is clicked. We also select the folder of images that we wish to display and set the lightbox type to "Wide". The button that we added to the page is shown in the <i>Page HTML</i> box above.</p>
+    <br>
+    <p class="lead" name="popup-lightbox-wide-options">
+        <i class="icon-code"></i> &nbsp; <a href="#popup-lightbox-wide-options" data-toggle="collapse" data-target="#popup-lightbox-wide-options" onClick="return false;">Script options...</a>
+    </p>
+    <div id="popup-lightbox-wide-options" class="collapse">
+        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        
+gallery_theme: "lightbox"                   //This is included automatically for all "Popup Lightbox" galleries
+lightbox_type: "wide",				    	//compact / wide - please use the OctoberCMS component inspector to set this option!{% endfilter %}</code></pre>
+    </div>
+    
+    
+    
+    
+    <!-- Compact Layout -->
+    <div class="page-header">
+        <h2>"Compact" Layout</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Gallery</h3>
+        </div>
+        <div class="panel-body">
+            {% component 'popupLightbox2' %}
+            <button id="gallery-button-2" class="btn btn-primary">Click me!</button>
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Media Folder</td><td>travels-and-landscapes</td></tr>
+                <tr><td>Lightbox Type</td><td>Compact</td></tr>
+                <tr><td>Attach-to</td><td>#gallery-button-2</td></tr>
+                <tr><td>Script options</td><td>lightbox_show_numbers: false,lightbox_slider_image_border_width: 20</td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+            <pre><code>{% filter escape %}<button id="gallery-button-2" class="btn btn-primary">Click me!</button>{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: We set the "Attach-to" property in the component inspector to the ID of the button element that we want to trigger the gallery from. The script will then add an "on-click" event handler to this button that opens the gallery when it is clicked. We also select the folder of images that we wish to display and set the lightbox type to "Compact". We also add some script options to hide the image numbers and change the image border from the default of 10 to a wider 20 pixels. The button that we added to the page is shown in the <i>Page HTML</i> box above.</p>
+    <br>
+    <p class="lead" name="popup-lightbox-default-options">
+        <i class="icon-code"></i> &nbsp; <a href="#popup-lightbox-default-options" data-toggle="collapse" data-target="#popup-lightbox-default-options" onClick="return false;">Script options...</a>
+    </p>
+    <div id="popup-lightbox-default-options" class="collapse">
+        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        
+gallery_theme: "lightbox"                   //This is included automatically for all "Popup Lightbox" galleries
+lightbox_type: "compact",					//compact / wide - please use the OctoberCMS component inspector to set this option!{% endfilter %}</code></pre>
+    </div>
+    
+    
+    
+    
+    <!-- Details -->
+    <div class="page-header">
+        <h2>Additional Options</h2>
+    </div>
+    <br/>    
+    <p class="lead" name="popup-lightbox-options">
+        <i class="icon-code"></i> &nbsp; <a href="#popup-lightbox-options" data-toggle="collapse" data-target="#popup-lightbox-options" onClick="return false;">Script options applicable to all "Popup Lightbox" galleries...</a>
+    </p>
+    <div id="popup-lightbox-options" class="collapse">
+        <pre>{% filter escape %}//lightbox options:
+					
+lightbox_hide_arrows_onvideoplay: true,			//hide the arrows when video start playing and show when stop
+lightbox_arrows_position: "sides",				//sides, inside: position of the arrows, used on compact type			
+lightbox_arrows_offset: 10,						//The horizontal offset of the arrows
+lightbox_arrows_inside_offset: 10,				//The offset from the image border if the arrows placed inside
+lightbox_arrows_inside_alwayson: false,			//Show the arrows on mouseover, or always on.
+
+lightbox_overlay_color:null,					//the color of the overlay. if null - will take from css
+lightbox_overlay_opacity:1,						//the opacity of the overlay. for compact type - 0.6
+lightbox_top_panel_opacity: null,				//the opacity of the top panel
+
+lightbox_close_on_emptyspace:true,				//close the lightbox on empty space
+
+lightbox_show_numbers: true,					//show numbers on the right side
+lightbox_numbers_size: null,					//the size of the numbers string
+lightbox_numbers_color: null,					//the color of the numbers
+lightbox_numbers_padding_top:null,				//the top padding of the numbers (used in compact mode)
+lightbox_numbers_padding_right:null,			//the right padding of the numbers (used in compact mode)
+ 
+lightbox_slider_image_border: true,				//enable border around the image (for compact type only)
+lightbox_slider_image_border_width: 10,			//image border width
+lightbox_slider_image_border_color: "#ffffff",	//image border color
+lightbox_slider_image_border_radius: 0,			//image border radius
+
+lightbox_slider_image_shadow: true,				//enable border shadow the image
+
+lightbox_slider_control_swipe:true,				//true,false - enable swiping control
+lightbox_slider_control_zoom:true,				//true, false - enable zooming control
+
+ //lightbox text panel:
+
+lightbox_show_textpanel: true,						//show the text panel
+lightbox_textpanel_width: 550,						//the width of the text panel. wide type only
+ 
+lightbox_textpanel_enable_title: true,				//enable the title text
+lightbox_textpanel_enable_description: false,		//enable the description text
+
+lightbox_textpanel_padding_top:5,					//textpanel padding top 
+lightbox_textpanel_padding_bottom:5,				//textpanel padding bottom
+lightbox_textpanel_padding_right: 11,				//cut some space for text from right
+lightbox_textpanel_padding_left: 11,				//cut some space for text from left
+
+lightbox_textpanel_title_color:null,				//textpanel title color. if null - take from css
+lightbox_textpanel_title_font_family:null,			//textpanel title font family. if null - take from css
+lightbox_textpanel_title_text_align:null,			//textpanel title text align. if null - take from css
+lightbox_textpanel_title_font_size:null,			//textpanel title font size. if null - take from css
+lightbox_textpanel_title_bold:null,					//textpanel title bold. if null - take from css
+lightbox_textpanel_css_title:{},					//textpanel additional css of the title
+
+lightbox_textpanel_desc_color:null,					//textpanel description font family. if null - take from css
+lightbox_textpanel_desc_font_family:null,			//textpanel description font family. if null - take from css
+lightbox_textpanel_desc_text_align:null,			//textpanel description text align. if null - take from css
+lightbox_textpanel_desc_font_size:null,				//textpanel description font size. if null - take from css
+lightbox_textpanel_desc_bold:null,					//textpanel description bold. if null - take from css
+lightbox_textpanel_css_description:{},				//textpanel additional css of the description{% endfilter %}</pre>
+    </div>    
+    <p>You can read more and see a lot of examples at <a href="http://unitegallery.net">the UniteGallery website!</a></p>
+
+    
+    <br />
+    
+    <div class="text-center">
+			<p><a href="{{ 'demos/video-gallery'|page }}" class="btn btn-lg btn-default">Continue to Video Gallery</a></p>
+    </div>
+
+</div>

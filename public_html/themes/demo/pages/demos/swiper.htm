@@ -1,0 +1,465 @@
+title = "Swiper"
+url = "/demo/swiper"
+layout = "default"
+is_hidden = 0
+
+[swiperGallery]
+maxItems = 100
+mediaFolder = "budapest"
+effect = "fade"
+direction = "horizontal"
+speed = 300
+lazyLoad = 1
+addPagination = 0
+addNavigation = 1
+autoplay = 1
+autoplayDelay = 5000
+
+[swiperGallery swiperGallery2]
+maxItems = 100
+mediaFolder = "[1]"
+effect = "slide"
+direction = "vertical"
+speed = 300
+lazyLoad = 1
+addPagination = 1
+addNavigation = 0
+autoplay = 1
+autoplayDelay = 5000
+
+[swiperGallery swiperGallery3]
+maxItems = 100
+mediaFolder = "[2]"
+effect = "cube"
+direction = "horizontal"
+speed = 2000
+lazyLoad = 1
+addPagination = 1
+addNavigation = 1
+autoplay = 1
+autoplayDelay = 5000
+
+[swiperGallery swiperGallery4]
+maxItems = 100
+mediaFolder = "budapest"
+effect = "coverflow"
+direction = "horizontal"
+speed = 2000
+lazyLoad = 0
+addPagination = 0
+addNavigation = 0
+autoplay = 1
+autoplayDelay = 3000
+additionalGalleryOptions = "coverflowEffect: {rotate: 50,	stretch: 0,	depth: 100,	modifier: 1, slideShadows : true,}, centeredSlides: true, slidesPerView: 'auto',"
+
+[swiperGallery swiperGallery5]
+maxItems = 100
+mediaFolder = "budapest"
+effect = "flip"
+direction = "horizontal"
+speed = 300
+lazyLoad = 1
+addPagination = 1
+addNavigation = 0
+autoplay = 1
+autoplayDelay = 5000
+==
+<?php
+function onTest()
+{
+}
+?>
+==
+<div style="width: 100%; height: calc(100vh - 70px);">
+	{% component 'swiperGallery' %}
+</div>
+
+
+<div class="jumbotron title-js">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>Swiper</h1>
+                <p>Use this component to create a modern, responsive "swiper" that can be controlled easily from any device. Note that you can control any of the galleries by touch (or click-and-swipe using a mouse). Various transitions are available: "fade", "slide", "flip", "cube", etc..</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+
+	
+    
+	<!-- Full-width Transition -->
+	<div class="page-header">
+		<h2>Full-width Gallery with Fade Transition (as seen above)</h2>
+	</div>
+	<p class="lead">
+		<i class="icon-code"></i> &nbsp; Settings used for this example:
+	</p>    
+		<div class="flex-horizontal">
+		<div>
+			<p><strong>Component Inspector</strong></p>
+			<table>
+				<tr><td>Media Folder</td><td>budapest</td></tr>
+				<tr><td>Transition Effect</td><td>Fade</td></tr>
+			</table>
+		</div>
+		<div>
+			<p><strong>Page HTML</strong></p>
+<pre><code>{% filter escape %}{% verbatim %}<div style="width: 100%; height: calc(100vh - 70px);">
+	{% component 'swiperGallery' %}
+</div>{% endverbatim %}{% endfilter %}</code></pre>
+		</div>
+	</div>
+	<p>Explanation: We set the folder of images that we wish to display and set the transition type to "Slide". The swiper component by default fills whatever space it is in, in this case we set the container DIV to take up 100% of the viewport and be 100vh tall (inline styles are frowned upon but this is a demo!). Note that for android devices you may want to add some additional logic to deal with the ever-appearing-disappearing address bar.</p>
+	<br>
+		
+    
+    <!-- Wide Layout -->
+    <div class="page-header">
+        <h2>"Slide" Transition</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Gallery</h3>
+        </div>
+        <div class="panel-body">
+            <div style="width: 1008px; height: 630px; margin: 0 auto;">
+                {% component 'swiperGallery2' %}
+            </div>
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Media Folder</td><td>budapest</td></tr>
+                <tr><td>Transition Effect</td><td>Swipe</td></tr>
+                <tr><td>Direction</td><td>Vertical</td></tr>
+                <tr><td>Add navigation?</td><td>Unchecked</td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+<pre><code>{% filter escape %}{% verbatim %}<div style="width: 1008px; height: 630px; margin: 0 auto;">
+	{% component 'swiperGallery2' %}
+</div>{% endverbatim %}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: We set the folder of images that we wish to display and set the transition type to "Swipe", and the direction to "Vertical", and we hide the navigation arrows. We set the container DIV to have a specific width and height (inline styles are frowned upon but this is a demo!).</p>
+	<br>
+		
+    
+    <!-- "Cube" Transition -->
+    <div class="page-header">
+        <h2>"Cube" Transition</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Gallery</h3>
+        </div>
+        <div class="panel-body">
+            <div id="swiper-cube-demo" style="width: 504px; height: 315px; margin: 0 auto; margin-bottom: 70px;">
+				{% put styles %}
+				<style>
+					#swiper-cube-demo .swiper-pagination {
+						position: relative;
+						top: 20px;
+					}
+					#swiper-cube-demo .swiper-slide {
+						background-size: cover;
+					}
+					#swiper-cube-demo .swiper-pagination-bullet-active {
+						background-color: red;
+					}
+				</style>
+				{% endput %}
+                {% component 'swiperGallery3' %}
+            </div>
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Media Folder</td><td>budapest</td></tr>
+                <tr><td>Transition Effect</td><td>Cube</td></tr>
+                <tr><td>Transition Speed</td><td>2000</td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+<pre><code>{% filter escape %}{% verbatim %}<div id="swiper-cube-demo" style="width: 504px; height: 315px; margin: 0 auto; margin-bottom: 70px;">
+	{% put styles %}
+	<style>
+		#swiper-cube-demo .swiper-pagination {
+			position: relative;
+			top: 20px;
+		}
+		#swiper-cube-demo .swiper-pagination-bullet-active {
+			background-color: red;
+		}
+	</style>
+	{% endput %}
+	{% component 'swiperGallery3' %}
+</div>{% endverbatim %}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: We set the folder of images that we wish to display and set the transition type to "Cube". The cube animation effect is very resource-intensive, so we make the gallery size small and set the transition duration to 3 seconds. We add some CSS to pull the navigator component down below the slides, and set the active bullet to be red.</p>
+	<br>
+	
+
+	
+	
+
+	
+    <!-- "Coverflow" Transition -->
+    <div class="page-header">
+		<h2>"Coverflow" Transition</h2>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Gallery</h3>
+		</div>
+		<div class="panel-body">
+			<div id="swiper-coverflow-demo" style="width: 100%; height: 315px;">
+				{% put styles %}
+				<style>
+					#swiper-coverflow-demo .swiper-container {
+						width: 100%;
+						padding-top: 50px;
+						padding-bottom: 50px;
+					}
+					#swiper-coverflow-demo .swiper-slide {
+						background-size: cover;
+					}
+					#swiper-coverflow-demo .swiper-slide {
+						background-size: cover;
+						background-position: center center;
+						background-repeat: no-repeat;
+						width: 300px;
+						height: 300px;
+					}
+				</style>
+				{% endput %}
+				{% component 'swiperGallery4' %}
+			</div>
+		</div>
+	</div>
+	<p class="lead">
+		<i class="icon-code"></i> &nbsp; Settings used for this example:
+	</p>    
+		<div class="flex-horizontal">
+		<div>
+			<p><strong>Component Inspector</strong></p>
+			<table>
+				<tr><td>Media Folder</td><td>budapest</td></tr>
+				<tr><td>Transition Effect</td><td>Coverflow</td></tr>
+				<tr><td>Transition Speed</td><td>2000</td></tr>
+				<tr><td>Lazy-load images?</td><td>Not checked</td></tr>
+				<tr><td>Add pagination?</td><td>Not checked</td></tr>
+				<tr><td>Add navigation?</td><td>Not checked</td></tr>
+				<tr><td>Auto-play?</td><td>Checked</td></tr>
+				<tr><td>Auto-play Delay</td><td>3000</td></tr>
+				<tr><td>Additional Swiper Options</td><td>coverflowEffect: {rotate: 50,	stretch: 0,	depth: 100,	modifier: 1, slideShadows : true,}, centeredSlides: true, slidesPerView: 'auto'</td></tr>
+			</table>
+		</div>
+		<div>
+			<p><strong>Page HTML</strong></p>
+<pre><code>{% filter escape %}{% verbatim %}
+<div id="swiper-coverflow-demo" style="width: 100%; height: 315px;">
+	{% put styles %}
+	<style>
+		#swiper-coverflow-demo .swiper-container {
+			width: 100%;
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		#swiper-coverflow-demo .swiper-slide {
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+			width: 300px;
+			height: 300px;
+		}
+	</style>
+	{% endput %}
+	{% component 'swiperGallery4' %}
+</div>{% endverbatim %}{% endfilter %}</code></pre>
+		</div>
+	</div>
+	<p>Explanation: We set the folder of images that we wish to display and set the transition type to "Coverflow". This animation effect is very resource-intensive, so we make the gallery size small and set the transition duration to 2 seconds. We add some CSS as well as some custom options, which were taken from the swiper <a href="https://idangero.us/swiper/demos/240-effect-coverflow.html"demo page</a> with <a href="https://github.com/nolimits4web/Swiper/blob/master/demos/240-effect-coverflow.html">source code</a> for "Coverflow".</p>
+	<br>
+    
+	
+
+	
+    <!-- "Flip" Transition -->
+    <div class="page-header">
+		<h2>"Flip" Transition</h2>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Gallery</h3>
+		</div>
+		<div class="panel-body" style="padding: 0;">
+			<div id="swiper-flip-demo" style="width: 100%; height: 600px; margin: 0; background-color: black;">
+				{% put styles %}
+				<style>
+					#swiper-flip-demo .swiper-slide {
+						background-size: cover;
+						background-color: transparent;
+					}
+				</style>
+				{% endput %}
+				{% component 'swiperGallery5' %}
+			</div>
+		</div>
+	</div>
+	<p class="lead">
+		<i class="icon-code"></i> &nbsp; Settings used for this example:
+	</p>    
+		<div class="flex-horizontal">
+		<div>
+			<p><strong>Component Inspector</strong></p>
+			<table>
+				<tr><td>Media Folder</td><td>budapest</td></tr>
+				<tr><td>Transition Effect</td><td>Flip</td></tr>
+				<tr><td>Direction</td><td>Vertical</td></tr>
+				<tr><td>Add navigation?</td><td>Unchecked</td></tr>
+			</table>
+		</div>
+		<div>
+			<p><strong>Page HTML</strong></p>
+<pre><code>{% filter escape %}{% verbatim %}<div style="width: 1008px; height: 630px; margin: 0 auto;">
+	{% component 'swiperGallery2' %}
+</div>{% endverbatim %}{% endfilter %}</code></pre>
+		</div>
+	</div>
+	<p>Explanation: We set the folder of images that we wish to display and set the transition type to "Flip". We set the container DIV to fill its parent horizontally.</p>
+	<br>
+	
+
+
+
+    
+    <!-- Details -->
+    <div id="additoinal-options" class="page-header">
+        <h2>Additional Options</h2>
+    </div>
+    <br/>    
+    <p class="lead" name="swiper-slide-options">
+		<i class="icon-code"></i> &nbsp; <a href="#swiper-slide-options" data-toggle="collapse" data-target="#swiper-slide-options" onClick="return false;">Script options applicable to all "Swiper" galleries...</a>
+	</p>
+	<div id="swiper-slide-options" class="collapse">
+		<p>The swiper script has a plethora of available options, only a few of them can be set using the component inspector as shown in the table below. For all available options, see <a href="https://idangero.us/swiper/api">The Swiper Official API Docs</a>.</p>
+		<table class="params-table">
+			<thead>
+				<tr>
+					<th>Script Parameter</th>
+					<th>OctoberCMS Component Inspector Property</th>
+					<th>Type</th>
+					<th>Default</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>effect</td>
+					<td>"Swipe Effect"</td>
+					<td>number</td>
+					<td>300</td>
+					<td>Duration of transition between slides (in ms)</td>
+				</tr>
+				<tr>
+					<td>direction</td>
+					<td>"Direction"</td>
+					<td>string</td>
+					<td>'horizontal'</td>
+					<td>Could be 'horizontal' or 'vertical' (for vertical slider).</td>
+				</tr>
+				<tr>
+					<td>speed</td>
+					<td>"Transition Speed"</td>
+					<td>number</td>
+					<td>300</td>
+					<td>Duration of transition between slides (in ms)</td>
+				</tr>
+				<tr>
+					<td>lazy</td>
+					<td>"Lazy-load images?"</td>
+					<td>object/boolean</td>
+					<td></td>
+					<td>Enables images lazy loading. Object with lazy loading parameters or boolean true to enable with default settings. For example:
+<pre><code>{% filter escape %}{% verbatim %}var mySwiper = new Swiper('.swiper-container', {
+	lazy: {
+		loadPrevNext: true,
+	},
+});{% endverbatim %}{% endfilter %}</code></pre>
+					<a href="https://idangero.us/swiper/api/#lazy">See the original docs!</a>
+					</td>
+				</tr>
+				<tr>
+					<td>pagination</td>
+					<td>"Lazy-load images?"</td>
+					<td>object/boolean</td>
+					<td></td>
+					<td>Object with pagination parameters. For example:
+<pre><code>{% filter escape %}{% verbatim %}var mySwiper = new Swiper('.swiper-container', {
+	pagination: {
+		el: '.swiper-pagination',
+		type: 'bullets',
+	},
+});{% endverbatim %}{% endfilter %}</code></pre>
+					<a href="https://idangero.us/swiper/api/#pagination">See the original docs!</a>
+					</td>
+				</tr>
+				<tr>
+					<td>navigation</td>
+					<td>"Add navigation?"</td>
+					<td>object/boolean</td>
+					<td></td>
+					<td>Object with navigation parameters. For example:
+<pre><code>{% filter escape %}{% verbatim %}var mySwiper = new Swiper('.swiper-container', {
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+});{% endverbatim %}{% endfilter %}</code></pre>
+					<a href="https://idangero.us/swiper/api/#navigation">See the original docs!</a>
+					</td>
+				</tr>
+				<tr>
+					<td>autoplay</td>
+					<td>"Auto-play?" and "Auto-play Delay"</td>
+					<td>object/boolean</td>
+					<td></td>
+					<td>Object with autoplay parameters or boolean true to enable with default settings. For example:
+<pre><code>{% filter escape %}{% verbatim %}var mySwiper = new Swiper('.swiper-container', {
+	autoplay: {
+		delay: 5000,
+	},
+});{% endverbatim %}{% endfilter %}</code></pre>
+					<a href="https://idangero.us/swiper/api/#autoplay">See the original docs!</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+    
+    <br />
+    
+    <div class="text-center">
+        <p><a href="{{ 'demos/popup-lightbox'|page }}" class="btn btn-lg btn-default">Continue to Popup Lightbox</a></p>
+    </div>
+
+</div>

@@ -1,0 +1,19 @@
+title = "Playground"
+url = "/cookbook/overriding-partials"
+layout = "blank"
+is_hidden = 0
+
+[swiperGallery mySwiperGallery]
+maxItems = 100
+mediaFolder = "plants-and-flowers"
+direction = "horizontal"
+speed = 300
+lazyLoad = 1
+addPagination = 1
+addNavigation = 1
+autoplay = 1
+autoplayDelay = 5000
+==
+<div style="width: 100%; height: 100vh">
+    {% component 'mySwiperGallery' %}
+</div>

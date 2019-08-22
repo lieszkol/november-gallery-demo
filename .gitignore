@@ -4,7 +4,6 @@
 /public_html/plugins/october
 /public_html/modules/**/*
 /public_html/bootstrap
-/public_html/themes/demo
 /public_html/artisan
 /public_html/index.php
 /public_html/.htaccess

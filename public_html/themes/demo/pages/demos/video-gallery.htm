@@ -1,0 +1,420 @@
+title = "Video Gallery"
+url = "/demo/video-gallery"
+layout = "default"
+is_hidden = 0
+
+[videoGallery]
+maxItems = 100
+videoGalleryItemsSelector = "#videos"
+videoGalleryLayout = "video_gallery_right_thumb"
+galleryWidth = 1100
+galleryHeight = 450
+
+[videoGallery videoGallery2]
+maxItems = 100
+videoGalleryItemsSelector = "#videos-2"
+videoGalleryLayout = "video_gallery_right_title_only"
+
+[videoGallery videoGallery3]
+maxItems = 100
+videoGalleryItemsSelector = "#videos-3"
+videoGalleryLayout = "video_gallery_right_no_thumb"
+==
+<?php
+function onTest()
+{
+}
+?>
+==
+<div class="jumbotron title-js">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>Video Gallery</h1>
+                <p>Use this gallery to display videos inline. You can choose to upload your videos to your website or to show videos hosted on YouTube/Vimeo/Wistia.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    
+    <!-- Default (Thumbs) Layout -->
+    <div class="page-header">
+        <h2>"Thumbnails" Layout</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Gallery</h3>
+        </div>
+        <div class="panel-body">
+            <div id="videos"> 
+            
+				<div data-type="youtube"
+    				 data-title="Waimea cliff jump"
+    				 data-description="Waimea cliff jump description"
+    				 data-thumb="https://i.ytimg.com/vi/sogCtOe8FFY/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/sogCtOe8FFY/sddefault.jpg"
+    			     data-videoid="sogCtOe8FFY" ></div>
+
+			
+    			<div data-type="youtube"
+    				 data-title="slip and slide -1000 feet"
+    				 data-description="slip and slide -1000 feet description"
+    				 data-thumb="https://i.ytimg.com/vi/fvvoVD_5PHE/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/fvvoVD_5PHE/sddefault.jpg"
+    			     data-videoid="fvvoVD_5PHE" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="Cliff Slip and Slide!"
+    				 data-description="Cliff Slip and Slide description"
+    				 data-thumb="https://i.ytimg.com/vi/sXk2AbdTe68/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/sXk2AbdTe68/sddefault.jpg"
+    			     data-videoid="sXk2AbdTe68" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="Epic Hot Air Balloon Rope Swing"
+    				 data-description="Epic Hot Air Balloon Rope description"
+    				 data-thumb="https://i.ytimg.com/vi/KEoXn34ilKY/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/KEoXn34ilKY/sddefault.jpg"
+    			     data-videoid="KEoXn34ilKY" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="BMX Rodeo at 1000 FPS"
+    				 data-description="BMX Rodeo at 1000 FPS description"
+    				 data-thumb="https://i.ytimg.com/vi/rUi3X3G63dg/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/rUi3X3G63dg/sddefault.jpg"
+    			     data-videoid="rUi3X3G63dg" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="Nepal - Adventures of Teamsupertramp"
+    				 data-description="Nepal - Adventures of description"
+    				 data-thumb="https://i.ytimg.com/vi/oc1HDF2AyNE/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/oc1HDF2AyNE/sddefault.jpg"
+    			     data-videoid="oc1HDF2AyNE" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="Hoverboard in Real Life! In 4K!"
+    				 data-description="Hoverboard in Real Life! In 4K! description"
+    				 data-thumb="https://i.ytimg.com/vi/gMaDhkNJA2g/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/gMaDhkNJA2g/sddefault.jpg"
+    			     data-videoid="gMaDhkNJA2g" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="Surfing Indoors! Flow Riding in 4K!"
+    				 data-description="Surfing Indoors! Flow Riding description"
+    				 data-thumb="https://i.ytimg.com/vi/FWN08M0kg4c/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/FWN08M0kg4c/sddefault.jpg"
+    			     data-videoid="FWN08M0kg4c" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="Bike Parkour -Streets of San Francisco!"
+    				 data-description="Bike Parkour -Streets of description"
+    				 data-thumb="https://i.ytimg.com/vi/K9XCKP9KN7A/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/K9XCKP9KN7A/sddefault.jpg"
+    			     data-videoid="K9XCKP9KN7A" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="Parkour, Cops, and Donuts in 4K"
+    				 data-description="Parkour, Cops, and description"
+    				 data-thumb="https://i.ytimg.com/vi/2dv4IP4Jd9w/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/2dv4IP4Jd9w/sddefault.jpg"
+    			     data-videoid="2dv4IP4Jd9w" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="YoYo Kid - World's Best YoYo Champion"
+    				 data-description="YoYo Kid - World's Best YoYo description"
+    				 data-thumb="https://i.ytimg.com/vi/uHEs5JRFEUU/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/uHEs5JRFEUU/sddefault.jpg"
+    			     data-videoid="uHEs5JRFEUU" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="Cliff Jumping Hawaii - Proof"
+    				 data-description="Cliff Jumping Hawaii - Proof description"
+    				 data-thumb="https://i.ytimg.com/vi/vSROSencBss/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/vSROSencBss/sddefault.jpg"
+    			     data-videoid="vSROSencBss" ></div>
+    			     
+			</div>
+            {% component 'videoGallery' %}
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Gallery Selector/ID</td><td>#videos</td></tr>
+                <tr><td>Gallery Layout</td><td>Thumbnails</td></tr>
+                <tr><td>Gallery Width</td><td>1100</td></tr>
+                <tr><td>Gallery Height</td><td>450</td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+            <pre><code>{% filter escape %}<div id="videos"> 
+    <div data-type="youtube"
+    	 data-title="Waimea cliff jump"
+    	 data-description="Waimea cliff jump description"
+    	 data-thumb="https://i.ytimg.com/vi/sogCtOe8FFY/mqdefault.jpg"
+    	 data-image="https://i.ytimg.com/vi/sogCtOe8FFY/sddefault.jpg"
+         data-videoid="sogCtOe8FFY" ></div>
+    <!-- Further links to videos omitted for brevity... -->
+</div>{% endfilter %}</code></pre>
+        </div>
+        <div>
+            <p><strong>Custom CSS</strong></p>
+            <pre><code>{% filter escape %}.ug-theme-video {
+    margin: 0 auto;
+}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: Instead of picking a media folder, we set the "Gallery Selector/ID" option in the component inspector. We then have to add a div that matches the specified selector, and add the gallery items <a href="http://unitegallery.net/index.php?page=video-items-syntax">as described here</a>. The div that we added is shown in the <i>Page HTML</i> box above.<br>
+    We also set the gallery layout to "Thumbnails" and an explicit width and height for the gallery that matches the proportions of our videos with some space on the side for the thumbnails. We add a CSS rule (in a stylesheet that we manually add to our layout) to center all galleries with the "video" theme within their container.</p>
+    <br>
+    <p class="lead" name="video-gallery-default-options">
+        <i class="icon-code"></i> &nbsp; <a href="#video-gallery-default-options" data-toggle="collapse" data-target="#video-gallery-default-options" onClick="return false;">Script options...</a>
+    </p>
+    <div id="video-gallery-default-options" class="collapse">
+        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        
+gallery_theme: "video"                      //This is included automatically for all "video" galleries
+
+theme_skin: "right-thumb"                   //right-thumb | right-title-only | right-no-thumb
+                                            // - please use the OctoberCMS component inspector	to set this option!
+                                            
+gallery_width:900,							//gallery width	- please use the OctoberCMS component inspector	to set this option!
+gallery_height:500,							//gallery height - please use the OctoberCMS component inspector to set this option!{% endfilter %}</code></pre>
+    </div>
+    
+    
+    
+    
+    <!-- Titles Only Layout -->
+    <div class="page-header">
+        <h2>"Titles Only" Layout</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Gallery</h3>
+        </div>
+        <div class="panel-body">
+            <div id="videos-2"> 
+            
+				<div data-type="youtube"
+    				 data-title="Waimea cliff jump"
+    				 data-description="Waimea cliff jump description"
+    				 data-thumb="https://i.ytimg.com/vi/sogCtOe8FFY/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/sogCtOe8FFY/sddefault.jpg"
+    			     data-videoid="sogCtOe8FFY" ></div>
+
+			
+    			<div data-type="youtube"
+    				 data-title="slip and slide -1000 feet"
+    				 data-description="slip and slide -1000 feet description"
+    				 data-thumb="https://i.ytimg.com/vi/fvvoVD_5PHE/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/fvvoVD_5PHE/sddefault.jpg"
+    			     data-videoid="fvvoVD_5PHE" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="Cliff Slip and Slide!"
+    				 data-description="Cliff Slip and Slide description"
+    				 data-thumb="https://i.ytimg.com/vi/sXk2AbdTe68/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/sXk2AbdTe68/sddefault.jpg"
+    			     data-videoid="sXk2AbdTe68" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="Epic Hot Air Balloon Rope Swing"
+    				 data-description="Epic Hot Air Balloon Rope description"
+    				 data-thumb="https://i.ytimg.com/vi/KEoXn34ilKY/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/KEoXn34ilKY/sddefault.jpg"
+    			     data-videoid="KEoXn34ilKY" ></div>
+    			     
+			</div>
+            {% component 'videoGallery2' %}
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Gallery Selector/ID</td><td>#videos-2</td></tr>
+                <tr><td>Gallery Layout</td><td>Titles Only</td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+            <pre><code>{% filter escape %}<div id="videos-2"> 
+    <div data-type="youtube"
+    	 data-title="Waimea cliff jump"
+    	 data-description="Waimea cliff jump description"
+    	 data-thumb="https://i.ytimg.com/vi/sogCtOe8FFY/mqdefault.jpg"
+    	 data-image="https://i.ytimg.com/vi/sogCtOe8FFY/sddefault.jpg"
+         data-videoid="sogCtOe8FFY" ></div>
+    <!-- Further links to videos omitted for brevity... -->
+</div>{% endfilter %}</code></pre>
+        </div>
+        <div>
+            <p><strong>Custom CSS</strong></p>
+            <pre><code>{% filter escape %}.ug-theme-video {
+    margin: 0 auto;
+}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: Again we set the "Gallery Selector/ID" option in the component inspector and add a div that matches the specified selector, and add the gallery items inside that div <a href="http://unitegallery.net/index.php?page=video-items-syntax">as described here</a>. The div that we added is shown in the <i>Page HTML</i> box above.<br>
+    We also set the gallery layout to "Titles Only". We add a CSS rule (in a stylesheet that we manually add to our layout) to center all galleries with the "video" theme within their container.</p>
+    <br>
+    <p class="lead" name="video-gallery-titlesonly-options">
+        <i class="icon-code"></i> &nbsp; <a href="#video-gallery-titlesonly-options" data-toggle="collapse" data-target="#video-gallery-titlesonly-options" onClick="return false;">Script options...</a>
+    </p>
+    <div id="video-gallery-titlesonly-options" class="collapse">
+        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        
+gallery_theme: "video"                      //This is included automatically for all "video" galleries
+
+theme_skin: "right-title-only"              //right-thumb | right-title-only | right-no-thumb
+                                            // - please use the OctoberCMS component inspector	to set this option!
+                                            
+gallery_width:900,							//gallery width	- please use the OctoberCMS component inspector	to set this option!
+gallery_height:500,							//gallery height - please use the OctoberCMS component inspector to set this option!{% endfilter %}</code></pre>
+    </div>
+    
+    
+    
+    
+    <!-- No Thumbnails Layout -->
+    <div class="page-header">
+        <h2>"No Thumbnails" Layout</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Gallery</h3>
+        </div>
+        <div class="panel-body">
+            <div id="videos-3"> 
+            
+				<div data-type="youtube"
+    				 data-title="Waimea cliff jump"
+    				 data-description="Waimea cliff jump description"
+    				 data-thumb="https://i.ytimg.com/vi/sogCtOe8FFY/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/sogCtOe8FFY/sddefault.jpg"
+    			     data-videoid="sogCtOe8FFY" ></div>
+
+			
+    			<div data-type="youtube"
+    				 data-title="slip and slide -1000 feet"
+    				 data-description="slip and slide -1000 feet description"
+    				 data-thumb="https://i.ytimg.com/vi/fvvoVD_5PHE/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/fvvoVD_5PHE/sddefault.jpg"
+    			     data-videoid="fvvoVD_5PHE" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="Cliff Slip and Slide!"
+    				 data-description="Cliff Slip and Slide description"
+    				 data-thumb="https://i.ytimg.com/vi/sXk2AbdTe68/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/sXk2AbdTe68/sddefault.jpg"
+    			     data-videoid="sXk2AbdTe68" ></div>
+    
+    			
+    			<div data-type="youtube"
+    				 data-title="Epic Hot Air Balloon Rope Swing"
+    				 data-description="Epic Hot Air Balloon Rope description"
+    				 data-thumb="https://i.ytimg.com/vi/KEoXn34ilKY/mqdefault.jpg"
+    				 data-image="https://i.ytimg.com/vi/KEoXn34ilKY/sddefault.jpg"
+    			     data-videoid="KEoXn34ilKY" ></div>
+    			     
+			</div>
+            {% component 'videoGallery3' %}
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Gallery Selector/ID</td><td>#videos-2</td></tr>
+                <tr><td>Gallery Layout</td><td>No Thumbnails</td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+            <pre><code>{% filter escape %}<div id="videos-3"> 
+    <div data-type="youtube"
+    	 data-title="Waimea cliff jump"
+    	 data-description="Waimea cliff jump description"
+    	 data-thumb="https://i.ytimg.com/vi/sogCtOe8FFY/mqdefault.jpg"
+    	 data-image="https://i.ytimg.com/vi/sogCtOe8FFY/sddefault.jpg"
+         data-videoid="sogCtOe8FFY" ></div>
+    <!-- Further links to videos omitted for brevity... -->
+</div>{% endfilter %}</code></pre>
+        </div>
+        <div>
+            <p><strong>Custom CSS</strong></p>
+            <pre><code>{% filter escape %}.ug-theme-video {
+    margin: 0 auto;
+}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: This is the same as the previous gallery excep that we set the gallery layout to "No Thumbnails".</p>
+    <br>
+    <p class="lead" name="video-gallery-nothumbs-options">
+        <i class="icon-code"></i> &nbsp; <a href="#video-gallery-nothumbs-options" data-toggle="collapse" data-target="#video-gallery-nothumbs-options" onClick="return false;">Script options...</a>
+    </p>
+    <div id="video-gallery-nothumbs-options" class="collapse">
+        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        
+gallery_theme: "video"                      //This is included automatically for all "video" galleries
+
+theme_skin: "right-no-thumb"                //right-thumb | right-title-only | right-no-thumb
+                                            // - please use the OctoberCMS component inspector	to set this option!
+                                            
+gallery_width:900,							//gallery width	- please use the OctoberCMS component inspector	to set this option!
+gallery_height:500,							//gallery height - please use the OctoberCMS component inspector to set this option!{% endfilter %}</code></pre>
+    </div>
+    
+    
+    
+    
+    <!-- Details -->
+    <div class="page-header">
+        <h2>Additional Options</h2>
+    </div>
+    <br/>    
+    <p class="lead" name="video-gallery-options">
+        <i class="icon-code"></i> &nbsp; <a href="#video-gallery-options" data-toggle="collapse" data-target="#video-gallery-options" onClick="return false;">Script options applicable to all "Video" galleries...</a>
+    </p>
+    <div id="video-gallery-options" class="collapse">
+        <pre>{% filter escape %}theme_autoplay: false,				//autoplay videos at start.  true / false. Don't working on mobiles.
+theme_disable_panel_timeout:2500	//How much time the right panel will be disabled. in ms{% endfilter %}</pre>
+    </div>    
+    <p>You can read more and see a lot of examples at <a href="http://unitegallery.net">the UniteGallery website!</a></p>
+
+    
+    <br />
+    
+    <div class="text-center">
+			<p><a href="{{ 'demos/customization'|page }}" class="btn btn-lg btn-default">Continue to Customization</a></p>
+    </div>
+
+</div>

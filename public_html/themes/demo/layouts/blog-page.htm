@@ -1,0 +1,74 @@
+description = "Blog Page Demo"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        	body {
+        		display: grid;
+        		grid-template-columns: minmax(1fr, auto) 3fr;
+        		grid-template-rows: minmax(10vw auto) auto 10vw;
+        		grid-gap: 1em;
+        		grid-template-areas:
+        			"hdr		info"
+        			"content 	content"
+        			"ftr 	ftr";
+        	}
+        	header {
+        		grid-area: hdr;
+        	}
+        	footer {
+        		grid-area: ftr;
+        	}
+        	main {
+        		grid-area: content;
+        	}
+        	aside {
+        		grid-area: info;
+        	}
+        	body {
+        		margin: 0 auto;
+        		max-width: 56em;
+        		padding: 3em 0;
+        	}
+        	header,
+        	main,
+        	aside,
+        	footer {
+        		background: #eaeaea;
+        		display: flex;
+        		flex-direction: column;
+        		justify-content: center;
+        		padding: 1rem;
+        	}
+        	header,
+        	footer {
+        		align-items: center;
+        	}
+        	main,
+        	aside {
+        		align-items: flex-start;
+        	}
+        	
+            dl {
+            	display: grid;
+              	grid-template-columns: max-content 1rem auto;
+            }
+            dl dt {
+            	grid-column-start: 1;
+            }
+            dl dd {
+            	grid-column-start: 3;
+            }
+        </style>
+    
+        {% styles %}
+    </head>
+    <body>
+
+        {% page %}
+        
+		{% scripts %}
+
+    </body>
+</html>

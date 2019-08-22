@@ -1,0 +1,72 @@
+==
+{# Note that this isn't actually required because galleryitems is already set by the component: #}
+{% set galleryitems = __SELF__.galleryitems %}
+
+{% if __SELF__.error %}
+	<div class="alert zen-alert">{{ __SELF__.error }}</div>
+{% endif %}
+
+{# Some opinionated styles, modify as needed: #}
+{% put styles %}
+<style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+	.swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+</style>
+{% endput %}
+
+<!-- Swiper -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        {% for galleryitem in galleryitems.sortBy('fileName') %}
+		<div class="swiper-slide" style="background-image:url({{ galleryitem.url }})"></div>
+	    {% endfor %}	
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+
+<!-- Initialize Swiper -->
+{% put scripts %}
+<script>
+var swiper = new Swiper('.swiper-container', {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+</script>
+{% endput %}

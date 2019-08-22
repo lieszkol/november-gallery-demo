@@ -1,0 +1,150 @@
+title = "Image List Only"
+url = "/demo/image-list-only"
+layout = "default"
+is_hidden = 0
+
+[customGallery]
+maxItems = 9
+mediaFolder = "plants-and-flowers"
+
+[customGallery customGallery2]
+maxItems = 12
+mediaFolder = "plants-and-flowers"
+==
+<?php
+function onTest()
+{
+}
+?>
+==
+<div class="jumbotron title-js">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>Image List Only</h1>
+                <p>This component only loads the list of image files into a page variable, without rendering a gallery. Use this if you wish to write your own code for displaying the images.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <!-- Demo #1 -->
+    <div class="page-header">
+        <h2>Demo #1</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Gallery</h3>
+        </div>
+        <div class="panel-body">
+            {% component 'customGallery' %}
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+            {% for galleryitem in customGallery.galleryitems %}
+                <div>
+                    <a href="{{ galleryitem.url }}" target="_blank">
+                        <img src="{{ galleryitem.url | resize(280, false,  { mode: 'portrait', quality: '90', extension: 'png' }) }}" alt="{{ galleryitem.fileName }}" style="margin: 20px;" />
+                    </a>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Media Folder</td><td>plants-and-flowers</td></tr>
+                <tr><td>Max Images</td><td>9</td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+            <pre><code>{% filter escape %}{% verbatim %}<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+{% for galleryitem in customGallery.galleryitems %}
+    <div>
+        <a href="{{ galleryitem.url }}" target="_blank">
+            <img    src="{{ galleryitem.url | resize(280, false,  { mode: 'portrait', quality: '90', extension: 'png' }) }}" 
+                    alt="{{ galleryitem.fileName }}" 
+                    style="margin: 20px;" />
+        </a>
+    </div>
+{% endfor %}
+</div>{% endverbatim %}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: We select the folder of images we wish to display in the component inspector and also limit the number of images to 9. We then write our own html/Twig markup to display these images as shown in the <i>Page HTML</i> box above.<br>
+    <br>This example assumes that your gallery component has the alias "customGallery". Thumbnails are generated for the images using the Image Resizer Plugin and displayed in a flexbox, with each thumbnail providing a link to the full-resolution image. </p>
+    <br>
+    
+    
+    
+    
+    <!-- Demo #2 -->
+    <div class="page-header">
+        <h2>Demo #2</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Gallery</h3>
+        </div>
+        <div class="panel-body">
+            {% component 'customGallery2' %}
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+            <div class="container-fluid">
+            {% for galleryitemchunk in customGallery2.galleryitems.sortBy('fileName').chunk(3) %}
+                <div class="row">
+                    {% for galleryitem in galleryitemchunk %}
+                        <div class="col-xs-4" style="text-align: center;">
+                            <a href="{{ galleryitem.url }}" target="_blank">
+                                <img src="{{ galleryitem.url | resize(280, false,  { mode: 'portrait', quality: '90', extension: 'png' }) }}" alt="{{ galleryitem.fileName }}" />
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            </div>
+            </div>
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Media Folder</td><td>plants-and-flowers</td></tr>
+                <tr><td>Max Images</td><td>12</td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+            <pre><code>{% filter escape %}{% verbatim %}<div class="container-fluid">
+{% for galleryitemchunk in customGallery.galleryitems.sortBy('fileName').chunk(3) %}
+    <div class="row">
+        {% for galleryitem in galleryitemchunk %}
+            <div class="col-xs-4" style="text-align: center;">
+                <a href="{{ galleryitem.url }}" target="_blank">
+                    <img src="{{ galleryitem.url | resize(280, false,  { mode: 'portrait', quality: '90', extension: 'png' }) }}" alt="{{ galleryitem.fileName }}" />
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+</div>{% endverbatim %}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: We select the folder of images we wish to display in the component inspector and also limit the number of images to 12. We then write our own html/Twig markup to display these images as shown in the <i>Page HTML</i> box above.<br>
+    <br>We are assuming that your component has the alias "customGallery2." The images are sorted by filename and "chunked" into groups of 3 images, which are then displayed using the Bootstrap grid layout.</p>
+    <br>
+    
+    <div class="text-center">
+			<p><a href="{{ 'demos/customization'|page }}" class="btn btn-lg btn-default">Continue to Customization</a></p>
+    </div>
+
+</div>

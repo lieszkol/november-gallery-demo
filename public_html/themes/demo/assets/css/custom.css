@@ -1,0 +1,82 @@
+#layout-content .container table tr>td:first-child {
+    background-color: #F5F5F5;
+    font-weight: 500;
+    color: #333;
+}
+#layout-content .container table tr>td:last-child {
+    color: #385487;
+}
+#layout-content .container table tr>td {
+    border: 1px solid #D4D4D4;
+    padding: 3px 6px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-weight: 500;
+    white-space: nowrap;
+    padding-right: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 12px;
+}
+#layout-content pre {
+    tab-size:4;
+    -moz-tab-size: 4;
+    -o-tab-size:  4;
+    white-space: pre;
+    font-size: 12px;
+    overflow-x: auto;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    text-decoration: none;
+    outline: 0;
+    background-color: #3097d1 !important;
+}
+
+.ug-theme-default,
+.ug-theme-grid,
+.ug-theme-slider,
+.ug-theme-tiles,
+.ug-theme-video,
+#gallery-button {
+    margin: 0 auto;
+}
+.ug-theme-carousel .ug-thumb-wrapper {
+    border-color: #3097d1 !important;
+}
+.flex-horizontal {
+    display: flex; 
+    flex-wrap: wrap;
+}
+.flex-horizontal > div {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+
+#layout-content .container table.params-table tr>th {
+    background-color: #F5F5F5;
+    font-weight: 500;
+    color: #333;
+    font-weight: 500;
+}
+
+#layout-content .container table.params-table tr>td,
+#layout-content .container table.params-table tr>th {
+    border: 1px solid #D4D4D4;
+    padding: 3px 6px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    white-space: nowrap;
+    padding-right: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 12px;
+}
+#layout-content .container table.params-table tr>td {
+   font-weight: unset;
+}
+
+#layout-content .container table.params-table tr>td:first-child {
+    background-color: unset;
+    font-weight: unset;
+    font-size: 12px;
+}
