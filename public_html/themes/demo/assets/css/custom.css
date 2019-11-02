@@ -52,8 +52,13 @@
     margin-bottom: 20px;
 }
 
+#layout-content .container table.inspector-params-table {
+	width: 100%;
+    table-layout: fixed;
+}
 
-#layout-content .container table.params-table tr>th {
+#layout-content .container table.params-table tr>th,
+#layout-content .container table.inspector-params-table tr>th {
     background-color: #F5F5F5;
     font-weight: 500;
     color: #333;
@@ -61,21 +66,34 @@
 }
 
 #layout-content .container table.params-table tr>td,
-#layout-content .container table.params-table tr>th {
+#layout-content .container table.inspector-params-table tr>td,
+#layout-content .container table.params-table tr>th,
+#layout-content .container table.inspector-params-table tr>th {
     border: 1px solid #D4D4D4;
     padding: 3px 6px;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    white-space: nowrap;
     padding-right: 10px;
-    text-overflow: ellipsis;
-    overflow: hidden;
     font-size: 12px;
 }
-#layout-content .container table.params-table tr>td {
+#layout-content .container table.inspector-params-table tr>td {
+	word-wrap: break-word;
+	white-space: normal;
+    overflow: auto;
+    text-overflow: unset;
+}
+#layout-content .container table.params-table tr>td,
+#layout-content .container table.params-table tr>th {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#layout-content .container table.params-table tr>td,
+#layout-content .container table.inspector-params-table tr>td {
    font-weight: unset;
 }
 
-#layout-content .container table.params-table tr>td:first-child {
+#layout-content .container table.params-table tr>td:first-child,
+#layout-content .container table.inspector-params-table tr>td:first-child {
     background-color: unset;
     font-weight: unset;
     font-size: 12px;

@@ -41,7 +41,7 @@ function onTest()
         <div class="panel-body">
             {% component 'customGallery' %}
             <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
-            {% for galleryitem in customGallery.galleryitems %}
+            {% for galleryitem in customGallery.gallery.items %}
                 <div>
                     <a href="{{ galleryitem.url }}" target="_blank">
                         <img src="{{ galleryitem.url | resize(280, false,  { mode: 'portrait', quality: '90', extension: 'png' }) }}" alt="{{ galleryitem.fileName }}" style="margin: 20px;" />
@@ -65,7 +65,7 @@ function onTest()
         <div>
             <p><strong>Page HTML</strong></p>
             <pre><code>{% filter escape %}{% verbatim %}<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
-{% for galleryitem in customGallery.galleryitems %}
+{% for galleryitem in customGallery.gallery.items %}
     <div>
         <a href="{{ galleryitem.url }}" target="_blank">
             <img    src="{{ galleryitem.url | resize(280, false,  { mode: 'portrait', quality: '90', extension: 'png' }) }}" 
@@ -96,7 +96,7 @@ function onTest()
             {% component 'customGallery2' %}
             <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
             <div class="container-fluid">
-            {% for galleryitemchunk in customGallery2.galleryitems.sortBy('fileName').chunk(3) %}
+            {% for galleryitemchunk in customGallery2.gallery.items.sortBy('fileName').chunk(3) %}
                 <div class="row">
                     {% for galleryitem in galleryitemchunk %}
                         <div class="col-xs-4" style="text-align: center;">
@@ -125,7 +125,7 @@ function onTest()
         <div>
             <p><strong>Page HTML</strong></p>
             <pre><code>{% filter escape %}{% verbatim %}<div class="container-fluid">
-{% for galleryitemchunk in customGallery.galleryitems.sortBy('fileName').chunk(3) %}
+{% for galleryitemchunk in customGallery.gallery.items.sortBy('fileName').chunk(3) %}
     <div class="row">
         {% for galleryitem in galleryitemchunk %}
             <div class="col-xs-4" style="text-align: center;">
@@ -142,6 +142,14 @@ function onTest()
     <p>Explanation: We select the folder of images we wish to display in the component inspector and also limit the number of images to 12. We then write our own html/Twig markup to display these images as shown in the <i>Page HTML</i> box above.<br>
     <br>We are assuming that your component has the alias "customGallery2." The images are sorted by filename and "chunked" into groups of 3 images, which are then displayed using the Bootstrap grid layout.</p>
     <br>
+
+	
+    <!-- Details -->
+    <div id="additoinal-options" class="page-header">
+        <h2>Additional Options</h2>
+    </div>
+
+	{% partial 'componentInspectorOptions/image-list-only' %}
     
     <div class="text-center">
 			<p><a href="{{ 'demos/customization'|page }}" class="btn btn-lg btn-default">Continue to Customization</a></p>

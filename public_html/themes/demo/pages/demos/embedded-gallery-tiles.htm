@@ -4,21 +4,21 @@ layout = "default"
 is_hidden = 0
 
 [embeddedGallery]
-maxItems = 100
 mediaFolder = "budapest"
+maxItems = 100
 galleryLayout = "gallery_tiles"
 tilesLayout = "gallery_tiles_columns"
 combinedLayout = "not_applicable"
 
 [embeddedGallery embeddedGallery2]
-maxItems = 14
 mediaFolder = "budapest"
+maxItems = 14
 galleryLayout = "gallery_tiles"
 tilesLayout = "gallery_tiles_justified"
 
 [embeddedGallery embeddedGallery3]
-maxItems = 100
 mediaFolder = "budapest"
+maxItems = 100
 galleryLayout = "gallery_tiles"
 tilesLayout = "gallery_tiles_nested"
 additionalGalleryOptions = "tiles_space_between_cols: 10"
@@ -27,8 +27,8 @@ imageResizerHeight = 300
 imageResizerMode = "auto"
 
 [embeddedGallery embeddedGallery4]
-maxItems = 100
 mediaFolder = "budapest"
+maxItems = 100
 galleryLayout = "gallery_tiles"
 tilesLayout = "gallery_tiles_grid"
 ==
@@ -301,6 +301,9 @@ theme_navigation_offset_hor: 0,			//horizontal offset of the navigation, accordi
         <h2>Additional Options</h2>
     </div>
     <br/>    
+    
+	{% partial 'componentInspectorOptions/embedded-gallery' %}
+    
     <p class="lead" name="embedded-gallery-tiles-options">
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-tiles-options" data-toggle="collapse" data-target="#embedded-gallery-tiles-options" onClick="return false;">Script options applicable to all "Tile" galleries...</a>
     </p>

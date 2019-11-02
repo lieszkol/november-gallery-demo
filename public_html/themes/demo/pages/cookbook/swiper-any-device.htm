@@ -1,0 +1,87 @@
+title = "Swiper for Any Device"
+url = "/cookbook/swiper-for-any-device"
+layout = "blank"
+is_hidden = 0
+
+[swiperGallery]
+mediaFolder = "[8]"
+maxItems = 100
+direction = "horizontal"
+speed = 300
+lazyLoad = 1
+addPagination = 1
+addNavigation = 1
+autoplay = 1
+autoplayDelay = 5000
+useDescriptionAsCSS = 1
+mediaQuery = "@media screen and (orientation: portrait)"
+==
+{% put styles %}
+<style>
+	body {
+    	background-color: black;
+    	margin: 0;
+    	padding: 0;
+    }
+</style>
+
+<style>
+	#home-gallery {
+		height: 100vh;
+		width: 100%;
+	}
+	#home-gallery .swiper-slide {
+		text-align: center;
+		font-size: 18px;
+		background: #000;
+	}
+	#home-gallery .swiper-slide {
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+	@media screen and (min-width: 766px) and (orientation: landscape) {
+		#home-gallery .swiper-slide-vertical {
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+	}
+	@media screen and (orientation: portrait) {
+		.android #home-gallery {
+			height: calc(100vh - 56px) !important;
+		}
+		.android #home-gallery .swiper-button-next,
+		.android #home-gallery .swiper-button-prev {
+			display: none;
+		}
+	}
+</style>
+{% endput %}
+
+ {% put scripts %}
+<script>        
+    $(document).ready(function($) {
+        if(window.innerHeight < window.innerWidth) {
+            var mySwiper = document.querySelector('#home-gallery .swiper-container').swiper;
+            if (typeof(mySwiper) != 'undefined' && mySwiper != null) {
+                var slidesToRemove = [];
+                var slides = mySwiper.slides;
+                for (var i = 0, l = slides.length; i < l; i++) {
+                  if (slides[i].classList.contains('swiper-slide-vertical')) {
+                      slidesToRemove.push(i);
+                  }
+                }
+                if (slidesToRemove.length > 0) {
+                    mySwiper.removeSlide(slidesToRemove);
+                    mySwiper.update();
+                }
+            }
+        }
+    });
+</script>
+{% endput %}
+
+<div id="home-gallery">
+    {% component 'swiperGallery' %}
+</div>

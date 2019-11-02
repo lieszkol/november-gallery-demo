@@ -1,0 +1,80 @@
+[viewBag]
+==
+<br />
+    <p class="lead" name="embedded-gallery-tiles-componentinspector-options">
+		<i class="icon-code"></i> &nbsp; All Available Component Inspector Options for Embedded Galleries
+	</p>
+	<div id="embedded-gallery-tiles-componentinspector-options">
+		<table class="inspector-params-table">
+			<thead>
+				<tr>
+					<th style="width: 26ex;">Code</th>
+					<th style="width: 26ex;">OctoberCMS Component Inspector Property</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>alias</td>
+					<td>Alias</td>
+					<td>Standard OctoberCMS stuff, you refer to the component in your page via this unique identifier, the default is “embeddedGallery” but you can change it to anything you want (don’t use spaces or special characters though!)</td>
+				</tr>
+				<tr>
+					<td>mediaFolder</td>
+					<td>Media Folder</td>
+					<td>Select the folder that you uploaded the images to in the OctoberCMS Media manager. Only folders under the “Base Media Folder” set on the November Gallery settings page are valid.</td>
+				</tr>
+				<tr>
+					<td>maxItems</td>
+					<td>Max Images</td>
+					<td>The maximum number of images to display</td>
+				</tr>
+				<tr>
+					<td>sortBy</td>
+					<td>Order by</td>
+					<td>Order to display the gallery items in; note: Image Title, Description, and Sort Order only work for images uploaded using the Galleries page! Options are: (1) title / Image Title (2) description / Image Description (3) sortOrder / Image Order in Gallery (4) width / Image Width (5) height / Image Height (6) orientation / Image Orientation (7) fileName / Filename (8) fileSize / File Size (9) uploaded / Date/Time Uploaded; and all options are also available in reverse order (append DESC onto the option code).</td>
+				</tr>
+				<tr>
+					<td>galleryLayout</td>
+					<td>Gallery Layout</td>
+					<td>Select a gallery layout; possible values are: (1) default / Default (use the gallery layout set on the plugin settings page) (2) gallery_tiles / Tiles (3) gallery_carousel / Carousel (4) gallery_combined / Combined (5) gallery_slider / Slider</td>
+				</tr>
+				<tr>
+					<td>tilesLayout</td>
+					<td>Tile Layout</td>
+					<td>Only applicable if the Gallery Layout is set to “Tiles”; possible values are: (1) default / Default (use the default gallery layout set on the plugin settings page) (2) gallery_tiles_columns / Columns (3) gallery_tiles_justified / Justified (4) gallery_tiles_nested / Nested (5) gallery_tiles_grid / Grid</td>
+				</tr>
+				<tr>
+					<td>combinedLayout</td>
+					<td>Thumbnails Layout</td>
+					<td>Only applicable if the Gallery Layout is set to “Combined”; possible values are: (1) default / Default (use the default thumbnails layout set on the plugin settings page) (2) gallery_combined_default / Normal (default) (3) gallery_combined_compact / Compact (4) gallery_combined_grid / Grid</td>
+				</tr>
+				<tr>
+					<td>additionalGalleryOptions</td>
+					<td>Thumbnail Width</td>
+					<td>Width of the generated thumbnail; Leave empty or set to 0 to only constrain the image by height; leave both width and height empty to fall back on the values set on the backend plugin configuration page</td>
+				</tr>
+				<tr>
+					<td>imageResizerHeight</td>
+					<td>Thumbnail Height</td>
+					<td>Height of the generated thumbnail; Leave empty or set to 0 to only constrain the image by height; leave both width and height empty to fall back on the values set on the backend plugin configuration page</td>
+				</tr>
+				<tr>
+					<td>imageResizerMode</td>
+					<td>Thumbnail Mode</td>
+					<td>Select how to resize your images into thumbnails, or select “default” to use the thumbnail mode set on the plugin settings page; possible values are: (1) Default (2) Exact (3) Portrait (4) Landscape (5) Auto (6) Crop</td>
+				</tr>
+				<tr>
+					<td>galleryWidth</td>
+					<td>Gallery Width</td>
+					<td>Can be a number (pixel lenght) or a percent (of the parent container). Leave empty to fall back on the values set on the backend plugin configuration page</td>
+				</tr>
+				<tr>
+					<td>galleryHeight</td>
+					<td>Gallery Height</td>
+					<td>Only applies to “Combined” and “Slider” galleries! Can be a number (pixel lenght) or a percent (of the parent container). Leave empty to fall back on the values set on the backend plugin configuration page</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br />
