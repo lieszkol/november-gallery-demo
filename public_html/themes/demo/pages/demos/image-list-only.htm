@@ -5,7 +5,7 @@ is_hidden = 0
 
 [customGallery]
 maxItems = 9
-mediaFolder = "plants-and-flowers"
+mediaFolder = "[7]"
 
 [customGallery customGallery2]
 maxItems = 12
@@ -36,10 +36,36 @@ function onTest()
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Gallery</h3>
+            <h3 class="panel-title">{{ customGallery.gallery.name }}</h3>
         </div>
         <div class="panel-body">
             {% component 'customGallery' %}
+			<table>
+				<tr><td><b>Gallery Attribute</b></td><td><b>Value<b></td><td><b>Twig Code</b></td></tr>
+                <tr><td>Name:</td><td>{{ customGallery.gallery.name }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.name }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Slug:</td><td>{{ customGallery.gallery.slug }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.slug }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Description:</td><td>{{ customGallery.gallery.description }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.description }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Published At:</td><td>{{ customGallery.gallery.publishedAt }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.publishedAt }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Published?</td><td>{{ customGallery.gallery.published }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.published }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Created At:</td><td>{{ customGallery.gallery.createdAt }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.createdAt }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Updated At:</td><td>{{ customGallery.gallery.updatedAt }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.updatedAt }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image URL:</td><td>https://novembergallery.zenware.io/storage/app/uploads...</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.url }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Title:</td><td>{{ customGallery.gallery.previewImage.title }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.title }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Description:</td><td>{{ customGallery.gallery.previewImage.description }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.description }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Width:</td><td>{{ customGallery.gallery.previewImage.width }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.width }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Height:</td><td>{{ customGallery.gallery.previewImage.height }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.height }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Type:</td><td>{{ customGallery.gallery.previewImage.type }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.type }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Orientation:</td><td>{{ customGallery.gallery.previewImage.orientation }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.orientation }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Filename 1:</td><td>{{ customGallery.gallery.previewImage.fileNameWithoutExtension }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.fileNameWithoutExtension }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Extension:</td><td>{{ customGallery.gallery.previewImage.fileExtension }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.fileExtension }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Filename 2:</td><td>{{ customGallery.gallery.previewImage.fileName }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.fileName }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image File Path:</td><td>[redacted]</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.filePath }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Real Path:</td><td>[redacted]</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.fileRealPath }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image File Size:</td><td>{{ customGallery.gallery.previewImage.fileSize }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.fileSize }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Rel Path:</td><td>{{ customGallery.gallery.previewImage.relativeFilePath }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.relativeFilePath }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Uploaded:</td><td>{{ customGallery.gallery.previewImage.uploaded|date('Y-m-d\TH:i:sO') }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.uploaded|date('Y-m-d\TH:i:sO') }}{% endverbatim %}{% endfilter %}</td></tr>
+                
+            </table>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
             {% for galleryitem in customGallery.gallery.items %}
                 <div>
@@ -48,6 +74,7 @@ function onTest()
                     </a>
                 </div>
             {% endfor %}
+			{{ debug(customGallery.gallery) }}
             </div>
         </div>
     </div>
@@ -64,7 +91,31 @@ function onTest()
         </div>
         <div>
             <p><strong>Page HTML</strong></p>
-            <pre><code>{% filter escape %}{% verbatim %}<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+            <pre><code>{% filter escape %}{% verbatim %}<table>
+	<tr><td><b>Gallery Attribute</b></td><td><b>Value<b></td><td><b>Twig Code</b></td></tr>
+	<tr><td>Name:</td><td>{{ customGallery.gallery.name }}</td></tr>
+	<tr><td>Slug:</td><td>{{ customGallery.gallery.slug }}</td></tr>
+	<tr><td>Description:</td><td>{{ customGallery.gallery.description }}</td></tr>
+	<tr><td>Published At:</td><td>{{ customGallery.gallery.publishedAt }}</td></tr>
+	<tr><td>Published?</td><td>{{ customGallery.gallery.published }}</td></tr>
+	<tr><td>Created At:</td><td>{{ customGallery.gallery.createdAt }}</td></tr>
+	<tr><td>Updated At:</td><td>{{ customGallery.gallery.updatedAt }}</td></tr>
+	<tr><td>Preview Image URL:</td><td>https://novembergallery.zenware.io/storage/app/uploads...</td></tr>
+	<tr><td>Preview Image Title:</td><td>{{ customGallery.gallery.previewImage.title }}</td></tr>
+	<tr><td>Preview Image Description:</td><td>{{ customGallery.gallery.previewImage.description }}</td></tr>
+	<tr><td>Preview Image Width:</td><td>{{ customGallery.gallery.previewImage.width }}</td></tr>
+	<tr><td>Preview Image Height:</td><td>{{ customGallery.gallery.previewImage.height }}</td></tr>
+	<tr><td>Preview Image Type:</td><td>{{ customGallery.gallery.previewImage.type }}</td></tr>
+	<tr><td>Preview Image Orientation:</td><td>{{ customGallery.gallery.previewImage.orientation }}</td></tr>
+	<tr><td>Preview Image Filename 1:</td><td>{{ customGallery.gallery.previewImage.fileNameWithoutExtension }}</td></tr>
+	<tr><td>Preview Image Extension:</td><td>{{ customGallery.gallery.previewImage.fileExtension }}</td></tr>
+	<tr><td>Preview Image Filename 2:</td><td>{{ customGallery.gallery.previewImage.fileName }}</td></tr>
+	<tr><td>Preview Image File Path:</td><td>[redacted]</td></tr>
+	<tr><td>Preview Image Real Path:</td><td>[redacted]</td></tr>
+	<tr><td>Preview Image File Size:</td><td>{{ customGallery.gallery.previewImage.fileSize }}</td></tr>
+	<tr><td>Preview Image Rel Path:</td><td>{{ customGallery.gallery.previewImage.relativeFilePath }}</td></tr>
+	<tr><td>Preview Image Uploaded:</td><td>{{ customGallery.gallery.previewImage.uploaded|date('Y-m-d\TH:i:sO') }}</td></tr>                
+</table><div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
 {% for galleryitem in customGallery.gallery.items %}
     <div>
         <a href="{{ galleryitem.url }}" target="_blank">
