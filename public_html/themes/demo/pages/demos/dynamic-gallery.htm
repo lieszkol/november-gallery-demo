@@ -1,0 +1,48 @@
+title = "Dynamic Gallery"
+url = "/demos/dynamic-gallery/:gallery_code|^budapest|plants-and-flowers|travels-and-landscapes|cute-cat-pix|mountains|patterns-nature|philippines$"
+layout = "default"
+is_hidden = 0
+
+[embeddedGallery]
+mediaFolder = "{{ :gallery_code }}"
+maxItems = 100
+==
+<div class="jumbotron title-js">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>Dynamic Gallery</h1>
+                <p>Specify which gallery to show using URL parameters!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+	
+	{% component 'embeddedGallery' %}
+	
+	<p>This page demonstrates how you can choose which gallery to show using URL parameters. You can change the page address to any of the following:
+	<ul>
+	    <li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/budapest">https://novembergallery.zenware.io/demos/dynamic-gallery/budapest</a></li>
+	    <li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/plants-and-flowers">https://novembergallery.zenware.io/demos/dynamic-gallery/plants-and-flowers</a></li>
+		<li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/travels-and-landscapes">https://novembergallery.zenware.io/demos/dynamic-gallery/travels-and-landscapes</a></li>
+		<li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/cute-cat-pix">https://novembergallery.zenware.io/demos/dynamic-gallery/cute-cat-pix</a></li>
+		<li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/mountains">https://novembergallery.zenware.io/demos/dynamic-gallery/mountains</a></li>
+		<li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/patterns-nature">https://novembergallery.zenware.io/demos/dynamic-gallery/patterns-nature</a></li>
+		<li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/philippines">https://novembergallery.zenware.io/demos/dynamic-gallery/philippines</a></li>
+	</ul>
+	</p>
+	
+	<p><a href="https://its.zensoft.hu/books/november-gallery-cookbook/page/add-dynamically-using-url-parameters">Read the docs</a> to learn how to set this up on your own website!</p>
+	
+	<br>
+	    
+    <br />
+    
+    <div class="text-center">
+        <p><a href="{{ 'cookbook/blog-page'|page({ slug: 'november-gallery-in-a-blog-post' }) }}" class="btn btn-lg btn-default">Continue to Blog Page</a></p>
+    </div>
+
+</div>

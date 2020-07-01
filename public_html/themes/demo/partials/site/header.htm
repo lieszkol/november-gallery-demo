@@ -1,3 +1,4 @@
+[viewBag]
 ==
 <!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
@@ -32,6 +33,7 @@
 					<a title="Advanced Topics" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Advanced<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li class="{% if this.page.id == 'demos-customization' %}active{% endif %}"><a href="{{ 'demos/customization'|page }}">Customization</a></li>
+						<li class="{% if this.page.id == 'demos-dynamic-gallery' %}active{% endif %}"><a href="{{ 'demos/dynamic-gallery'|page({ gallery_code:"budapest" }) }}">Dynamic Gallery</a></li>
 						<li class="{% if this.page.id == 'cookbook-blog-page' %}active{% endif %}"><a href="{{ 'cookbook/blog-page'|page({ slug: 'november-gallery-in-a-blog-post' }) }}">in a Blog Post</a></li>
 						<li><a href="{{ 'day-builders'|staticPage }}" target="_blank"><i class="icon-external-link"></i>&nbsp;&nbsp;in a "Static" Page</a></li>
 						<li><a href="{{ 'cookbook/overriding-partials'|page }}" target="_blank"><i class="icon-external-link"></i>&nbsp;&nbsp;with an overridden component partial</a></li>
