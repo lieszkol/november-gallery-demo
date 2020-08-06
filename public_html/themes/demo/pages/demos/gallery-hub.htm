@@ -1,0 +1,358 @@
+title = "Gallery Hub"
+url = "/demo/gallery-hub"
+layout = "default"
+is_hidden = 0
+
+[galleryHub]
+hubType = "CITY"
+maxItems = 100
+linkUrl = "/demos/dynamic-gallery/%slug%"
+openInNewTab = 1
+visualization = "default"
+
+[galleryHub galleryHub2]
+hubType = "WATER"
+maxItems = 100
+linkUrl = "/demos/dynamic-gallery/%slug%"
+openInNewTab = 1
+visualization = "titleOnly"
+
+[galleryHub galleryHub3]
+hubType = "WATER"
+maxItems = 100
+linkUrl = "/demos/dynamic-gallery/%slug%"
+openInNewTab = 1
+visualization = "template"
+template = "<div style=\"width: 100px; height: 100px; margin: 10px; float: left; background: black url('%preview_image_url%') center center/cover; display: flex; align-items: center;\"><a href=\"%url%\" style=\"color: white; text-shadow: 0px 0px 7px #000000; text-align: center; width: 100px;\">%name%</a></div>"
+
+[galleryHub galleryHub4]
+hubType = "[ALL]"
+maxItems = 100
+linkUrl = "/demos/dynamic-gallery/%slug%"
+openInNewTab = 1
+visualization = "custom"
+==
+<?php
+function onTest()
+{
+}
+?>
+==
+<div class="jumbotron title-js">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>Gallery Hub</h1>
+                <p>This component loads a list of galleries without actually rendering any galleries. Use this if you wish to show a "hub" page with a link to all of your galleries.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+	<!-- Intro -->
+	<p>Before creating a gallery hub, you have to create your gallery pages - the "Gallery Hub" component only generates links to these pages, it does not automatically generate the actual galleries. You have several options.</p>
+	<ol>
+		<li>You can create separate CMS pages or "Pages Pages" or posts, just make sure to name them after the slug of the gallery that is shown on that given page. Also, set the URL of the pages to be similar, so that the only difference is in the address of the separate pages is the gallery slug.<br><br>
+		For example, let's say you've created a gallery of "ants" and a gallery of "ladybugs" using the back-end <i>Galleries</i> page. You add the keyword "bugs" to both galleries, and now you wish to show a "hub" of all "bug" galleries. You then create a page that shows a gallery of "ants", and you set the page URL to "/galleries/ants". That's fine. You then make a separate page where you show a gallery of ladybugs. Make sure to then set the URL of that page to "/galleries/ladybugs". This way you can then create a third, "Galleries of Bugs" page, add the "Gallery Hub" component to it, and then set the "Link URL" to: <i>/galleries/%slug%</i><br><br></li>
+		<li>Another option is to create a "dynamic" gallery page where the actual gallery to be shown is passed in as a URL parameter.<br><br>You will have to create a dedicated gallery page and set the "URL" to something like: <i>/gallery/:gallery_code?|^[a-z0-9\-\_]+$</i><br><br>...additionally, you will have to set the "Media Folder or Gallery" in your component inspector to ":gallery_code"<br><br> This way the page will show whatever gallery is passed to it in the page URL. Please refer to the <a href="https://its.zensoft.hu/books/november-gallery-cookbook/page/dynamic-gallery-using-url-parameters" target="_blank">Novemeber Gallery Cookbook</a> for a walk-through of this technique. Once your dynamic gallery page is set up, you can create your "Gallery Hub" page and set the "Link URL" to <i>/gallery/%slug%</i>.
+	</ol>
+
+		
+    
+    <!-- Demo #1 -->
+    <div class="page-header">
+        <h2>Hub of all "CITY" Galleries</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Hub</h3>
+        </div>
+        <div class="panel-body">
+            
+            {% component 'galleryHub' %}
+
+            {{ debug(galleryHub.galleries) }}
+
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Hub Type</td><td>Keyword: city</td></tr>
+                <tr><td>Order by</td><td>Default</td></tr>
+                <tr><td>Max Galleries</td><td>100</td></tr>
+                <tr><td>Link URL</td><td>/demos/dynamic-gallery/%slug%</td></tr>
+                <tr><td>Open in new tab?</td><td>Checked</td></tr>
+                <tr><td>Display as</td><td>Links with Preview Image</td></tr>
+                <tr><td>Link Template</td><td></td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+            <pre><code>{% filter escape %}{% verbatim %}{% component 'galleryHub' %}{% endverbatim %}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: We use the component inspector to set our options. We only wish to see galleries that we have added the "city" keyword to, so we set the "Hup Type" to "Keyword: city". Note that this option only works with galleries created through the "Galleries" back-end page, since it's not possible to add "keywords" to galleries uploaded into a folder using the OctoberCMS media manager. We also have to set the "Link URL", since this is required. We leave everything else as-is. We don't need to write any custom html/Twig markup, all we need is the component tag as shown in the <i>Page HTML</i> box above.<br>
+    <br>This example assumes that your gallery component has the alias "galleryHub". The default component partial tries to show the preview image of each gallery, if available.</p>
+    <br>
+
+		
+    
+    <!-- Demo #2 -->
+    <div class="page-header">
+        <h2>Hub of all "WATER" Galleries, Title Only</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Hub</h3>
+        </div>
+        <div class="panel-body">
+            
+            {% component 'galleryHub2' %}
+
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Hub Type</td><td>Keyword: water</td></tr>
+                <tr><td>Order by</td><td>Default</td></tr>
+                <tr><td>Max Galleries</td><td>100</td></tr>
+                <tr><td>Link URL</td><td>/demos/dynamic-gallery/%slug%</td></tr>
+                <tr><td>Open in new tab?</td><td>Checked</td></tr>
+                <tr><td>Display as</td><td>List of Links with Title Only</td></tr>
+                <tr><td>Link Template</td><td></td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+            <pre><code>{% filter escape %}{% verbatim %}{% component 'galleryHub2' %}{% endverbatim %}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: The only difference from the previous example is that we are showing all galleries with the keyword "Water", and we set the hub to display as a "List of Links with Title Only."</p>
+    <br>
+	
+		
+    
+    <!-- Demo #3 -->
+    <div class="page-header">
+        <h2>Hub of all "WATER" Galleries with a Custom Template</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Hub</h3>
+        </div>
+        <div class="panel-body">
+            
+            {% component 'galleryHub3' %}
+
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Hub Type</td><td>Keyword: water</td></tr>
+                <tr><td>Order by</td><td>Default</td></tr>
+                <tr><td>Max Galleries</td><td>100</td></tr>
+                <tr><td>Link URL</td><td>/demos/dynamic-gallery/%slug%</td></tr>
+                <tr><td>Open in new tab?</td><td>Checked</td></tr>
+                <tr><td>Display as</td><td>Set the Template Below</td></tr>
+                <tr><td>Link Template</td><td>
+					<pre><code>{% filter escape %}{% verbatim %}<div style="width: 100px; height: 100px; margin: 10px; float: left; background: black url('%preview_image_url%') center center/cover; display: flex; align-items: center;"><a href="%url%" style="color: white; text-shadow: 0px 0px 7px #000000; text-align: center;">%name%</a></div>{% endverbatim %}{% endfilter %}</code></pre>	
+				</td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+            <pre><code>{% filter escape %}{% verbatim %}{% component 'galleryHub3' %}{% endverbatim %}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: in this example we set the "Display as" option to "Set the Template Below" so we can define our own template. We then use some placeholders that will be replaced with values taken from the given gallery. Some of the available placeholders are:
+	</p>
+	<table>
+		<tr><td>%type%                        </td><td>Gallery type, can be NOVEMBER_GALLERY, OCTOBER_MEDIA_MANAGER_FOLDER, or BLOG_POST</td></tr>
+		<tr><td>%url%                         </td><td>Gallery URL</td></tr>
+		<tr><td>%slug%                        </td><td>Gallery slug*</td></tr>
+		<tr><td>%folder%                      </td><td>Gallery description*</td></tr>
+		<tr><td>%name%                        </td><td>Gallery name (or the folder name in case of galleries uploaded using the OctoberCMS media manager</td></tr>
+		<tr><td>%description%                 </td><td>Gallery description*</td></tr>
+		<tr><td>%keywords%                    </td><td>Gallery keywords*</td></tr>
+		<tr><td>%created_at%                  </td><td>Gallery creation date*</td></tr>
+		<tr><td>%updated_at%                  </td><td>Gallery last update date*</td></tr>
+		<tr><td>%preview_image_url%           </td><td>Preview image URL (if set)*</td></tr>
+		<tr><td>%published%                   </td><td>Gallery is published or not*</td></tr>
+		<tr><td>%preview_image_title%         </td><td>Preview image title*</td></tr>
+		<tr><td>%preview_image_description%   </td><td>Preview image description*</td></tr>
+		<tr><td>%preview_image_width%         </td><td>Preview image width*</td></tr>
+		<tr><td>%preview_image_height%        </td><td>Preview image height*</td></tr>
+		<tr><td>%preview_image_filename%      </td><td>Preview image filename*</td></tr>
+		<tr><td>%preview_image_filesize%      </td><td>Preview image file size*</td></tr>
+		<tr><td>%items_count%                 </td><td>Count of images</td></tr>
+	</table>
+* available for galleries created on the "Galleries" back-end page
+    <br>
+    <br>
+    
+		
+    
+    <!-- Demo #4 -->
+    <div class="page-header">
+        <h2>Hub of all available Galleries, Custom Visualization with Twig Code</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Hub</h3>
+        </div>
+        <div class="panel-body" style="overflow-x: scroll;">
+            
+            {% component 'galleryHub4' %}
+			
+			{{ debug(galleryHub4.galleries) }}
+
+			{% set galleries = galleryHub4.galleries %}
+
+			{% if galleries|length > 0 %}
+
+				<div id="{{galleryHub4.id}}">
+					<table>
+						<tr>
+							<th>Gallery Details</th><th>Preview Image</th><th>First Image</th><th>2nd Image</th><th>3rd Image</th><th></th>
+						</tr>
+					{% for gallery in galleries %}
+						<tr>
+							<td>Name: {{ gallery.name }}<br>
+								Type: {{ gallery.type }}<br>
+								Slug: {{ gallery.slug }}<br>
+								Description: {{ gallery.description }}<br>
+								Keywords: {{ gallery.keywords }}<br>
+								Updated: {{ gallery.updatedAt|date('Y-m-d') }}<br>
+								# of images: {{ gallery.items|length }}
+							</td>
+							<td>
+								{% if gallery.previewImage %}<img src="{{ gallery.previewImage.url | resize(80, 80,  { mode: 'portrait', quality: '90', extension: 'png' }) }}"></img>
+								{% else %}No preview image set!{% endif %}
+							</td>
+							<td>
+								{% if gallery.items|length > 0 %}<img src="{{ gallery.items.first.url | resize(80, 80,  { mode: 'portrait', quality: '90', extension: 'png' }) }}"></img>
+								{% else %}Unavailable{% endif %}
+							</td>
+							<td>
+								{% if gallery.items|length > 1 %}<img src="{{ gallery.items.1.url | resize(80, 80,  { mode: 'portrait', quality: '90', extension: 'png' }) }}"></img>
+								{% else %}Unavailable{% endif %}
+							</td>
+							<td>
+								{% if gallery.items|length > 2 %}<img src="{{ gallery.items.2.url | resize(80, 80,  { mode: 'portrait', quality: '90', extension: 'png' }) }}"></img>
+								{% else %}Unavailable{% endif %}
+							</td>
+							<td>
+								<a href="{{ gallery.url }}" target="_blank" class="btn btn-primary btn-sm" role="button">→ Open</a>
+							</td>
+						</tr>
+					{% endfor %}
+					</table>
+				</div>
+
+			{% endif %}
+
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Hub Type</td><td>All Galleries</td></tr>
+                <tr><td>Order by</td><td>Default</td></tr>
+                <tr><td>Max Galleries</td><td>100</td></tr>
+                <tr><td>Link URL</td><td>/demos/dynamic-gallery/%slug%</td></tr>
+                <tr><td>Open in new tab?</td><td>Checked</td></tr>
+                <tr><td>Display as</td><td>Write your own Twig Code</td></tr>
+                <tr><td>Link Template</td><td></td></tr>
+            </table>
+        </div>
+        <div style="max-width: 100%;">
+            <p><strong>Page HTML</strong></p>
+            <pre style="overflow-x: scroll;"><code style="display: block; white-space: pre;">{% filter escape %}{% verbatim %}{% component 'galleryHub4' %}
+{{ debug(galleryHub4.galleries) }}
+{% set galleries = galleryHub4.galleries %}
+{% if galleries|length > 0 %}
+	<div id="{{galleryHub4.id}}">
+		<table>
+			<tr>
+				<th>Gallery Details</th><th>Preview Image</th><th>First Image</th><th>2nd Image</th><th>3rd Image</th><th></th>
+			</tr>
+		{% for gallery in galleries %}
+			<tr>
+				<td>Name: {{ gallery.name }}<br>
+					Type: {{ gallery.type }}<br>
+					Slug: {{ gallery.slug }}<br>
+					Description: {{ gallery.description }}<br>
+					Keywords: {{ gallery.keywords }}<br>
+					Updated: {{ gallery.updatedAt|date('Y-m-d') }}<br>
+					# of images: {{ gallery.items|length }}
+				</td>
+				<td>
+					{% if gallery.previewImage %}<img src="{{ gallery.previewImage.url | resize(80, 80,  { mode: 'portrait', quality: '90', extension: 'png' }) }}"></img>
+					{% else %}No preview image set!{% endif %}
+				</td>
+				<td>
+					{% if gallery.items|length > 0 %}<img src="{{ gallery.items.first.url | resize(80, 80,  { mode: 'portrait', quality: '90', extension: 'png' }) }}"></img>
+					{% else %}Unavailable{% endif %}
+				</td>
+				<td>
+					{% if gallery.items|length > 1 %}<img src="{{ gallery.items.1.url | resize(80, 80,  { mode: 'portrait', quality: '90', extension: 'png' }) }}"></img>
+					{% else %}Unavailable{% endif %}
+				</td>
+				<td>
+					{% if gallery.items|length > 2 %}<img src="{{ gallery.items.2.url | resize(80, 80,  { mode: 'portrait', quality: '90', extension: 'png' }) }}"></img>
+					{% else %}Unavailable{% endif %}
+				</td>
+				<td>
+					<a href="{{ gallery.url }}" target="_blank" class="btn btn-primary btn-sm" role="button">→ Open</a>
+				</td>
+			</tr>
+		{% endfor %}
+		</table>
+	</div>
+{% endif %}{% endverbatim %}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: here we illustrate how you can write your own Twig code to render your gallery hub page. We set the "Display as" to "Write your own Twig code". This way the component will not render any links. The Galleries that match the criteria set in "Hub Type" using the component inspector will be avaiable from the page variable <code>galleryHub.galleries</code>, where "galleryHub" should be replaced with the alias of your component. The collection includes information about each gallery. In case of galleries uploaded using the "Galleries" back-end page, the collection will even include information on the images in those galleries. So, if you wanted, you could write code to render all of the images in all of the matching galleries. In this example we show some information about the galleries, the preview image, and the first three images in each gallery.</p>
+	<p>
+	Hint: To dig into the galleries (or any other) variable/collection, you have two options. You can simply add <code>{% filter escape %}{% verbatim %}{{ dump(galleryHub.galleries.toArray) }}{% endverbatim %}{% endfilter %}</code> on your page after the component definition and it will print debug information about that variable straight in your page. You should then see something like this:</p>
+	{{ dump(galleryHub.galleries.toArray) }}
+	<p>Click any of the gallery names to "drill-down" and see its public properties. To see all of the properties of the components itself, do: <code>{% filter escape %}{% verbatim %}{{ dump(galleryHub.toArray) }}{% endverbatim %}{% endfilter %}</code>. The result in this instance is:
+	</p>
+	{{ dump(galleryHub.toArray) }}
+	<p><a href="https://twig.symfony.com/doc/2.x/functions/dump.html" target="_blank">Learn more aboud <i>dump</i> in the official Twig docs</a>. Note that "the dump function won’t display anything if the debug option on the environment is not enabled". To enable debug mode on your site, edit the app.php config file in your config directory. Learn more about debug mode <a href="https://octobercms.com/docs/setup/configuration#debug-mode">in the OctoberCMS docs!</a></p>
+	<p>Alternatively, you can install the Debugbar plugin and then add <code>{% filter escape %}{% verbatim %}{{ debug(galleryHub.galleries) }}{% endverbatim %}{% endfilter %}</code> to your page to show debug information in the Laravel debugbar. To see all public properties of a gallery, do: <code>{% filter escape %}{% verbatim %}{{ debug(galleryHub.galleries.first.toArray) }}{% endverbatim %}{% endfilter %}</code>. Make sure to replace "galleryHub" with the alias of your component as set in the component options!</p>
+
+    
+    
+    
+
+	
+    <!-- Details -->    
+    <br>
+    <br>
+    <div class="text-center">
+			<p><a href="{{ 'demos/image-list-only'|page }}" class="btn btn-lg btn-default">Continue to Image List Only</a></p>
+    </div>
+
+</div>

@@ -3,5 +3,8 @@
 		{
 			"path": "public_html\\themes\\demo"
 		}
-	]
+	],
+	"settings": {
+		"editor.autoClosingQuotes": "never"
+	}
 }

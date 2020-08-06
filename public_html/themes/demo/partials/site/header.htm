@@ -28,10 +28,11 @@
                 <li class="{% if this.page.id == 'demos-swiper' %}active{% endif %}"><a href="{{ 'demos/swiper'|page }}">Swiper</a></li>
                 <li class="{% if this.page.id == 'demos-popup-lightbox' %}active{% endif %}"><a href="{{ 'demos/popup-lightbox'|page }}">Popup Lightbox</a></li>
                 <li class="{% if this.page.id == 'demos-video-gallery' %}active{% endif %}"><a href="{{ 'demos/video-gallery'|page }}">Video Gallery</a></li>
-				<li class="{% if this.page.id == 'demos-image-list-only' %}active{% endif %}"><a href="{{ 'demos/image-list-only'|page }}">Image List Only</a></li>
-				<li class="{% if this.page.id in ['demos-customization', 'cookbook-blog-page'] %}active{% endif %}">
+				<li class="{% if this.page.id == 'demos-gallery-hub' %}active{% endif %}"><a href="{{ 'demos/gallery-hub'|page }}">Gallery Hub</a></li>
+				<li class="{% if this.page.id in ['demos-image-list-only', 'demos-customization', 'demos-dynamic-gallery', 'cookbook-blog-page'] %}active{% endif %}">
 					<a title="Advanced Topics" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Advanced<span class="caret"></span></a>
 					<ul class="dropdown-menu">
+						<li class="{% if this.page.id == 'demos-image-list-only' %}active{% endif %}"><a href="{{ 'demos/image-list-only'|page }}">Image List Only</a></li>
 						<li class="{% if this.page.id == 'demos-customization' %}active{% endif %}"><a href="{{ 'demos/customization'|page }}">Customization</a></li>
 						<li class="{% if this.page.id == 'demos-dynamic-gallery' %}active{% endif %}"><a href="{{ 'demos/dynamic-gallery'|page({ gallery_code:"budapest" }) }}">Dynamic Gallery</a></li>
 						<li class="{% if this.page.id == 'cookbook-blog-page' %}active{% endif %}"><a href="{{ 'cookbook/blog-page'|page({ slug: 'november-gallery-in-a-blog-post' }) }}">in a Blog Post</a></li>

@@ -1,5 +1,5 @@
 title = "Dynamic Gallery"
-url = "/demos/dynamic-gallery/:gallery_code|^budapest|plants-and-flowers|travels-and-landscapes|cute-cat-pix|mountains|patterns-nature|philippines$"
+url = "/demos/dynamic-gallery/:gallery_code|^budapest|plants-and-flowers|travels-and-landscapes|cute-cat-pix|mountains|patterns-nature|philippines|usa|waters|weddings$"
 layout = "default"
 is_hidden = 0
 
@@ -11,7 +11,8 @@ maxItems = 100
     <div class="container">
         <div class="row">
             <div class="col-8">
-                <h1>Dynamic Gallery</h1>
+				<h2>Dynamic Gallery</h2>
+				<h1>"{{ embeddedGallery.gallery.name }}"</h1>
                 <p>Specify which gallery to show using URL parameters!</p>
             </div>
         </div>
@@ -19,19 +20,24 @@ maxItems = 100
 </div>
 
 <div class="container">
-
-	
-	{% component 'embeddedGallery' %}
+	<div class="panel panel-default">
+		<div class="panel-heading">
+            <h3 class="panel-title">{{ embeddedGallery.gallery.name }}</h3>
+        </div>
+        <div class="panel-body">
+			{% component 'embeddedGallery' %}
+        </div>
+    </div>
 	
 	<p>This page demonstrates how you can choose which gallery to show using URL parameters. You can change the page address to any of the following:
 	<ul>
-	    <li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/budapest">https://novembergallery.zenware.io/demos/dynamic-gallery/budapest</a></li>
-	    <li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/plants-and-flowers">https://novembergallery.zenware.io/demos/dynamic-gallery/plants-and-flowers</a></li>
-		<li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/travels-and-landscapes">https://novembergallery.zenware.io/demos/dynamic-gallery/travels-and-landscapes</a></li>
-		<li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/cute-cat-pix">https://novembergallery.zenware.io/demos/dynamic-gallery/cute-cat-pix</a></li>
-		<li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/mountains">https://novembergallery.zenware.io/demos/dynamic-gallery/mountains</a></li>
-		<li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/patterns-nature">https://novembergallery.zenware.io/demos/dynamic-gallery/patterns-nature</a></li>
-		<li><a href="https://novembergallery.zenware.io/demos/dynamic-gallery/philippines">https://novembergallery.zenware.io/demos/dynamic-gallery/philippines</a></li>
+	    <li><a href="https://novembergallery.zenware.hu/demos/dynamic-gallery/budapest">https://novembergallery.zenware.hu/demos/dynamic-gallery/budapest</a></li>
+	    <li><a href="https://novembergallery.zenware.hu/demos/dynamic-gallery/plants-and-flowers">https://novembergallery.zenware.hu/demos/dynamic-gallery/plants-and-flowers</a></li>
+		<li><a href="https://novembergallery.zenware.hu/demos/dynamic-gallery/travels-and-landscapes">https://novembergallery.zenware.hu/demos/dynamic-gallery/travels-and-landscapes</a></li>
+		<li><a href="https://novembergallery.zenware.hu/demos/dynamic-gallery/cute-cat-pix">https://novembergallery.zenware.hu/demos/dynamic-gallery/cute-cat-pix</a></li>
+		<li><a href="https://novembergallery.zenware.hu/demos/dynamic-gallery/mountains">https://novembergallery.zenware.hu/demos/dynamic-gallery/mountains</a></li>
+		<li><a href="https://novembergallery.zenware.hu/demos/dynamic-gallery/patterns-nature">https://novembergallery.zenware.hu/demos/dynamic-gallery/patterns-nature</a></li>
+		<li><a href="https://novembergallery.zenware.hu/demos/dynamic-gallery/philippines">https://novembergallery.zenware.hu/demos/dynamic-gallery/philippines</a></li>
 	</ul>
 	</p>
 	
