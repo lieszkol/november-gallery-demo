@@ -1,6 +1,6 @@
-title = "Embedded Gallery - Tiles"
 url = "/demo/embedded-gallery-tiles"
 layout = "default"
+title = "Embedded Gallery - Tiles"
 is_hidden = 0
 
 [embeddedGallery]
@@ -9,12 +9,16 @@ maxItems = 100
 galleryLayout = "gallery_tiles"
 tilesLayout = "gallery_tiles_columns"
 combinedLayout = "not_applicable"
+additionalGalleryOptions = "lightbox_show_textpanel: true"
+imageResizerWidth = 154
+imageResizerHeight = 200
 
 [embeddedGallery embeddedGallery2]
 mediaFolder = "budapest"
 maxItems = 14
 galleryLayout = "gallery_tiles"
 tilesLayout = "gallery_tiles_justified"
+imageResizerHeight = 200
 
 [embeddedGallery embeddedGallery3]
 mediaFolder = "budapest"
@@ -62,6 +66,13 @@ function onTest()
         </div>
         <div class="panel-body">
             {% component 'embeddedGallery' %}
+            {% put scripts %}
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $(".ug-slide-wrapper").append('<a href="#" style="position: absolute; width: 100px; left: calc(50% - 50px); bottom: 12px; display: block; background-color: transparent; border: 3px solid white; border-radius: 5px; color: white; font-weight: bold; text-align: center; font-size: 14px; z-index: 100;" onclick="this.href = this.parentElement.children[0].children[0].src;" download>DOWNLOAD</a>');
+                })
+            </script>
+            {% endput %}
         </div>
     </div>
     <p class="lead">

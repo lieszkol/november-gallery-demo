@@ -1,0 +1,47 @@
+[viewBag]
+==
+<!-- Nav -->
+<nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ 'home'|page }}">November Gallery Demo</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="separator hidden-xs"></li>
+                {# <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Introduction</a></li> #}
+                <li class="{% if this.page.id in ['demos-embedded-gallery-tiles', 'demos-embedded-gallery-carousel', 'demos-embedded-gallery-combined', 'demos-embedded-gallery-slider'] %}active{% endif %}">
+                    <a title="Embedded Gallery" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Embedded Gallery<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="{% if this.page.id == 'demos-embedded-gallery-tiles' %}active{% endif %}"><a href="{{ 'demos/embedded-gallery-tiles'|page }}">Tiles</a></li>
+                        <li class="{% if this.page.id == 'demos-embedded-gallery-carousel' %}active{% endif %}"><a href="{{ 'demos/embedded-gallery-carousel'|page }}">Carousel</a></li>
+                        <li class="{% if this.page.id == 'demos-embedded-gallery-combined' %}active{% endif %}"><a href="{{ 'demos/embedded-gallery-combined'|page }}">Combined</a></li>
+                        <li class="{% if this.page.id == 'demos-embedded-gallery-slider' %}active{% endif %}"><a href="{{ 'demos/embedded-gallery-slider'|page }}">Slider</a></li>
+                    </ul>
+                </li>
+                <li class="{% if this.page.id == 'demos-swiper' %}active{% endif %}"><a href="{{ 'demos/swiper'|page }}">Swiper</a></li>
+                <li class="{% if this.page.id == 'demos-popup-lightbox' %}active{% endif %}"><a href="{{ 'demos/popup-lightbox'|page }}">Popup Lightbox</a></li>
+                <li class="{% if this.page.id == 'demos-video-gallery' %}active{% endif %}"><a href="{{ 'demos/video-gallery'|page }}">Video Gallery</a></li>
+				<li class="{% if this.page.id == 'demos-gallery-hub' %}active{% endif %}"><a href="{{ 'demos/gallery-hub'|page }}">Gallery Hub</a></li>
+				<li class="{% if this.page.id in ['demos-image-list-only', 'demos-customization', 'demos-dynamic-gallery', 'cookbook-blog-page'] %}active{% endif %}">
+					<a title="Advanced Topics" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Advanced<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li class="{% if this.page.id == 'demos-image-list-only' %}active{% endif %}"><a href="{{ 'demos/image-list-only'|page }}">Image List Only</a></li>
+						<li class="{% if this.page.id == 'demos-customization' %}active{% endif %}"><a href="{{ 'demos/customization'|page }}">Customization</a></li>
+						<li class="{% if this.page.id == 'demos-dynamic-gallery' %}active{% endif %}"><a href="{{ 'demos/dynamic-gallery'|page({ gallery_code:"budapest" }) }}">Dynamic Gallery</a></li>
+						<li class="{% if this.page.id == 'cookbook-blog-page' %}active{% endif %}"><a href="{{ 'cookbook/blog-page'|page({ slug: 'november-gallery-in-a-blog-post' }) }}">in a Blog Post</a></li>
+						<li><a href="{{ 'day-builders'|staticPage }}" target="_blank"><i class="icon-external-link"></i>&nbsp;&nbsp;in a "Static" Page</a></li>
+						<li><a href="{{ 'cookbook/overriding-partials'|page }}" target="_blank"><i class="icon-external-link"></i>&nbsp;&nbsp;with an overridden component partial</a></li>
+						<li><a href="{{ 'cookbook/swiper-any-device'|page }}" target="_blank"><i class="icon-external-link"></i>&nbsp;&nbsp;Full-screen swiper for any device</a></li>
+					</ul>
+				</li>
+            </ul>
+        </div>
+    </div>
+</nav>

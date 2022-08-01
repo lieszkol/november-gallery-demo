@@ -1,0 +1,95 @@
+[viewBag]
+==
+    <br/>    
+    <p class="lead" name="swiper-slide-componentinspector-options">
+		<i class="icon-code"></i> &nbsp; All Available Component Inspector Options for Swiper Galleries
+	</p>
+	<div id="swiper-slide-componentinspector-options">
+		<table class="inspector-params-table">
+			<thead>
+				<tr>
+					<th style="width: 26ex;">Code</th>
+					<th style="width: 26ex;">OctoberCMS Component Inspector Property</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>alias</td>
+					<td>Alias</td>
+					<td>Standard OctoberCMS stuff, you refer to the component in your page via this unique identifier, the default is “embeddedGallery” but you can change it to anything you want (don’t use spaces or special characters though!)</td>
+				</tr>
+				<tr>
+					<td>mediaFolder</td>
+					<td>Media Folder</td>
+					<td>Select the folder that you uploaded the images to in the OctoberCMS Media manager. Only folders under the “Base Media Folder” set on the November Gallery settings page are valid.</td>
+				</tr>
+				<tr>
+					<td>maxItems</td>
+					<td>Max Images</td>
+					<td>The maximum number of images to display</td>
+				</tr>
+				<tr>
+					<td>sortBy</td>
+					<td>Order by</td>
+					<td>Order to display the gallery items in; note: Image Title, Description, and Sort Order only work for images uploaded using the Galleries page! Options are: (1) title / Image Title (2) description / Image Description (3) sortOrder / Image Order in Gallery (4) width / Image Width (5) height / Image Height (6) orientation / Image Orientation (7) fileName / Filename (8) fileSize / File Size (9) uploaded / Date/Time Uploaded; and all options are also available in reverse order (append DESC onto the option code).</td>
+				</tr>
+				<tr>
+					<td>effect</td>
+					<td>Transition Effect</td>
+					<td>Tranisition effect. Can be “slide”, “fade”, “cube”, “coverflow” or “flip”</td>
+				</tr>
+				<tr>
+					<td>direction</td>
+					<td>Direction</td>
+					<td>Can be “horizontal” or “vertical”</td>
+				</tr>
+				<tr>
+					<td>speed</td>
+					<td>Transition Speed</td>
+					<td>How long the transition effect lasts, in milliseconds. 1000 = 1 seconds.</td>
+				</tr>
+				<tr>
+					<td>lazyLoad</td>
+					<td>Lazy-load images?</td>
+					<td>Toggle ON to only load the images the user is looking at. Previous and next images are set to pre-load automatically.</td>
+				</tr>
+				<tr>
+					<td>addPagination</td>
+					<td>Add pagination?</td>
+					<td>Toggle ON to show bullets (or anything else) that enable to user to jump to any specific slide.</td>
+				</tr>
+				<tr>
+					<td>addNavigation</td>
+					<td>Add navigation?</td>
+					<td>Toggle ON to show previous-slide and next-slide navigational arrows.</td>
+				</tr>
+				<tr>
+					<td>autoplay</td>
+					<td>Auto-play?</td>
+					<td>Toggle ON to enable automatic advance on the slides. Set the delay below.</td>
+				</tr>
+				<tr>
+					<td>autoplayDelay</td>
+					<td>Auto-play Delay</td>
+					<td>How long each image is shown for, in milliseconds. 1000 = 1 seconds.</td>
+				</tr>
+				<tr>
+					<td>additionalGalleryOptions</td>
+					<td>Script options</td>
+					<td>Additional JS options that you want passed onto the Swiper script, for example: fadeEffect: {crossFade: true}</td>
+				</tr>
+				<tr>
+					<td>useDescriptionAsCSS</td>
+					<td>Description is Style</td>
+					<td>When “on” and the image description contains one or more colons, then the image description is injected as CSS for that image. If the image description does not contain a colon, it is injected as a CSS class. Note that this only works for images uploaded through the backend Gallery page.</td>
+				</tr>
+				<tr>
+					<td>mediaQuery</td>
+					<td>Media Query</td>
+					<td>Use in conjunction with "Description is Style". You can set a media query to only apply the style in certain circumstances. Do not include a trailing “{”. For example: @media screen and (max-width: 766px) and (orientation: portrait)</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br/>    

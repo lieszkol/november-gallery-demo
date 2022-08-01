@@ -1,0 +1,107 @@
+description = "Demo for placeholders"
+
+[staticPage]
+useContent = 1
+default = 1
+==
+{variable name="cover" label="Cover Image" tab="Structured Info" type="mediafinder" mode="image"}{/variable}
+{variable name="author" label="Author" tab="Structured Info" type="text"}Unknown{/variable}
+{variable name="storyTitle" label="Story Title" tab="Structured Info" type="text"}Unknown{/variable}
+{variable name="originalCopyrightYear" label="Original copyright year" tab="Structured Info" type="text"}Unknown{/variable}
+{variable name="Genre" label="Genre" tab="Structured Info" type="dropdown" options="Science Fiction|Fantasy|Horror"}Unknown{/variable}
+{variable name="firstPublished" label="First Published" tab="Structured Info" type="datepicker" mode="date" format="Y-m"}Unknown{/variable}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        	body {
+        		display: grid;
+        		grid-template-columns: minmax(1fr, auto) 3fr;
+        		grid-template-rows: minmax(10vw auto) auto 10vw;
+        		grid-gap: 1em;
+        		grid-template-areas:
+        			"hdr		info"
+        			"content 	content"
+        			"ftr 	ftr";
+        	}
+        	header {
+        		grid-area: hdr;
+        	}
+        	footer {
+        		grid-area: ftr;
+        	}
+        	main {
+        		grid-area: content;
+        	}
+        	aside {
+        		grid-area: info;
+        	}
+        	body {
+        		margin: 0 auto;
+        		max-width: 56em;
+        		padding: 3em 0;
+        	}
+        	header,
+        	main,
+        	aside,
+        	footer {
+        		background: #eaeaea;
+        		display: flex;
+        		justify-content: center;
+        		padding: 1rem;
+        	}
+        	header,
+        	footer {
+        		align-items: center;
+        	}
+        	main,
+        	aside {
+        		align-items: flex-start;
+        	}
+        	
+            dl {
+            	display: grid;
+              	grid-template-columns: max-content 1rem auto;
+            }
+            dl dt {
+            	grid-column-start: 1;
+            }
+            dl dd {
+            	grid-column-start: 3;
+            }
+        </style>
+    
+        {% styles %}
+    </head>
+    <body>
+
+        <header>
+            {% placeholder header default title="Header" type="html" %}
+                My Favorite Short Stories
+			{% endplaceholder %}</pre>
+        </header>
+        <main>
+            {% component 'staticPage' %}
+        </main>
+        <aside>
+			<div>
+			    <dl>
+			        <dt>Title:</dt><dd>{{ storyTitle }}</dd>
+			        <dt>Author:</dt><dd>{{ author }}</dd>
+			        {% if originalCopyrightYear %}<dt>Copyright year:</dt><dd>{{ originalCopyrightYear }}</dd>{% endif %}
+			        {% if genre %}<dt>Genre:</dt><dd>{{ genre }}</dd>{% endif %}
+			        {% if firstPublished %}<dt>First published:</dt><dd>{{ firstPublished }}</dd>{% endif %}
+			    </dl>
+			    <i>{% placeholder info default title="Info" type="text" %}Let us know of any information you know about this short story!{% endplaceholder %}</i>
+			</div>
+			<img src="{{ cover|media }}" style="float: right; max-height: 200px; margin-left: 3em;" />
+        </aside>
+        <footer>
+            &copy; {{ author }}
+        </footer>
+		
+		{% scripts %}
+
+    </body>
+</html>

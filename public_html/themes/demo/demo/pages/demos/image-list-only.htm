@@ -1,0 +1,209 @@
+title = "Image List Only"
+url = "/demo/image-list-only"
+layout = "default"
+is_hidden = 0
+
+[customGallery]
+maxItems = 9
+mediaFolder = "[7]"
+
+[customGallery customGallery2]
+maxItems = 12
+mediaFolder = "plants-and-flowers"
+==
+<?php
+function onTest()
+{
+}
+?>
+==
+<div class="jumbotron title-js">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>Image List Only</h1>
+                <p>This component only loads the list of image files into a page variable, without rendering a gallery. Use this if you wish to write your own code for displaying the images.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <!-- Demo #1 -->
+    <div class="page-header">
+        <h2>Demo #1</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{ customGallery.gallery.name }}</h3>
+        </div>
+        <div class="panel-body">
+            {% component 'customGallery' %}
+			<table>
+				<tr><td><b>Gallery Attribute</b></td><td><b>Value<b></td><td><b>Twig Code</b></td></tr>
+                <tr><td>Name:</td><td>{{ customGallery.gallery.name }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.name }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Slug:</td><td>{{ customGallery.gallery.slug }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.slug }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Description:</td><td>{{ customGallery.gallery.description }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.description }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Published At:</td><td>{{ customGallery.gallery.publishedAt }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.publishedAt }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Published?</td><td>{{ customGallery.gallery.published }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.published }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Created At:</td><td>{{ customGallery.gallery.createdAt }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.createdAt }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Updated At:</td><td>{{ customGallery.gallery.updatedAt }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.updatedAt }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image URL:</td><td>https://novembergallery.zenware.hu/storage/app/uploads...</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.url }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Title:</td><td>{{ customGallery.gallery.previewImage.title }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.title }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Description:</td><td>{{ customGallery.gallery.previewImage.description }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.description }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Width:</td><td>{{ customGallery.gallery.previewImage.width }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.width }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Height:</td><td>{{ customGallery.gallery.previewImage.height }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.height }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Type:</td><td>{{ customGallery.gallery.previewImage.type }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.type }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Orientation:</td><td>{{ customGallery.gallery.previewImage.orientation }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.orientation }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Filename 1:</td><td>{{ customGallery.gallery.previewImage.fileNameWithoutExtension }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.fileNameWithoutExtension }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Extension:</td><td>{{ customGallery.gallery.previewImage.fileExtension }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.fileExtension }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Filename 2:</td><td>{{ customGallery.gallery.previewImage.fileName }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.fileName }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image File Path:</td><td>[redacted]</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.filePath }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Real Path:</td><td>[redacted]</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.fileRealPath }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image File Size:</td><td>{{ customGallery.gallery.previewImage.fileSize }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.fileSize }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Rel Path:</td><td>{{ customGallery.gallery.previewImage.relativeFilePath }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.relativeFilePath }}{% endverbatim %}{% endfilter %}</td></tr>
+                <tr><td>Preview Image Uploaded:</td><td>{{ customGallery.gallery.previewImage.uploaded|date('Y-m-d\TH:i:sO') }}</td><td>{% filter escape %}{% verbatim %}{{ customGallery.gallery.previewImage.uploaded|date('Y-m-d\TH:i:sO') }}{% endverbatim %}{% endfilter %}</td></tr>
+                
+            </table>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+            {% for galleryitem in customGallery.gallery.items %}
+                <div>
+                    <a href="{{ galleryitem.url }}" target="_blank">
+                        <img src="{{ galleryitem.url | resize(280, false,  { mode: 'portrait', quality: '90', extension: 'png' }) }}" alt="{{ galleryitem.fileName }}" style="margin: 20px;" />
+                    </a>
+                </div>
+            {% endfor %}
+			{{ debug(customGallery.gallery) }}
+            </div>
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Media Folder</td><td>plants-and-flowers</td></tr>
+                <tr><td>Max Images</td><td>9</td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+            <pre><code>{% filter escape %}{% verbatim %}<table>
+	<tr><td><b>Gallery Attribute</b></td><td><b>Value<b></td><td><b>Twig Code</b></td></tr>
+	<tr><td>Name:</td><td>{{ customGallery.gallery.name }}</td></tr>
+	<tr><td>Slug:</td><td>{{ customGallery.gallery.slug }}</td></tr>
+	<tr><td>Description:</td><td>{{ customGallery.gallery.description }}</td></tr>
+	<tr><td>Published At:</td><td>{{ customGallery.gallery.publishedAt }}</td></tr>
+	<tr><td>Published?</td><td>{{ customGallery.gallery.published }}</td></tr>
+	<tr><td>Created At:</td><td>{{ customGallery.gallery.createdAt }}</td></tr>
+	<tr><td>Updated At:</td><td>{{ customGallery.gallery.updatedAt }}</td></tr>
+	<tr><td>Preview Image URL:</td><td>https://novembergallery.zenware.hu/storage/app/uploads...</td></tr>
+	<tr><td>Preview Image Title:</td><td>{{ customGallery.gallery.previewImage.title }}</td></tr>
+	<tr><td>Preview Image Description:</td><td>{{ customGallery.gallery.previewImage.description }}</td></tr>
+	<tr><td>Preview Image Width:</td><td>{{ customGallery.gallery.previewImage.width }}</td></tr>
+	<tr><td>Preview Image Height:</td><td>{{ customGallery.gallery.previewImage.height }}</td></tr>
+	<tr><td>Preview Image Type:</td><td>{{ customGallery.gallery.previewImage.type }}</td></tr>
+	<tr><td>Preview Image Orientation:</td><td>{{ customGallery.gallery.previewImage.orientation }}</td></tr>
+	<tr><td>Preview Image Filename 1:</td><td>{{ customGallery.gallery.previewImage.fileNameWithoutExtension }}</td></tr>
+	<tr><td>Preview Image Extension:</td><td>{{ customGallery.gallery.previewImage.fileExtension }}</td></tr>
+	<tr><td>Preview Image Filename 2:</td><td>{{ customGallery.gallery.previewImage.fileName }}</td></tr>
+	<tr><td>Preview Image File Path:</td><td>[redacted]</td></tr>
+	<tr><td>Preview Image Real Path:</td><td>[redacted]</td></tr>
+	<tr><td>Preview Image File Size:</td><td>{{ customGallery.gallery.previewImage.fileSize }}</td></tr>
+	<tr><td>Preview Image Rel Path:</td><td>{{ customGallery.gallery.previewImage.relativeFilePath }}</td></tr>
+	<tr><td>Preview Image Uploaded:</td><td>{{ customGallery.gallery.previewImage.uploaded|date('Y-m-d\TH:i:sO') }}</td></tr>                
+</table><div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+{% for galleryitem in customGallery.gallery.items %}
+    <div>
+        <a href="{{ galleryitem.url }}" target="_blank">
+            <img    src="{{ galleryitem.url | resize(280, false,  { mode: 'portrait', quality: '90', extension: 'png' }) }}" 
+                    alt="{{ galleryitem.fileName }}" 
+                    style="margin: 20px;" />
+        </a>
+    </div>
+{% endfor %}
+</div>{% endverbatim %}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: We select the folder of images we wish to display in the component inspector and also limit the number of images to 9. We then write our own html/Twig markup to display these images as shown in the <i>Page HTML</i> box above.<br>
+    <br>This example assumes that your gallery component has the alias "customGallery". Thumbnails are generated for the images using the Image Resizer Plugin and displayed in a flexbox, with each thumbnail providing a link to the full-resolution image. </p>
+    <br>
+    
+    
+    
+    
+    <!-- Demo #2 -->
+    <div class="page-header">
+        <h2>Demo #2</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Gallery</h3>
+        </div>
+        <div class="panel-body">
+            {% component 'customGallery2' %}
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+            <div class="container-fluid">
+            {% for galleryitemchunk in customGallery2.gallery.items.sortBy('fileName').chunk(3) %}
+                <div class="row">
+                    {% for galleryitem in galleryitemchunk %}
+                        <div class="col-xs-4" style="text-align: center;">
+                            <a href="{{ galleryitem.url }}" target="_blank">
+                                <img src="{{ galleryitem.url | resize(280, false,  { mode: 'portrait', quality: '90', extension: 'png' }) }}" alt="{{ galleryitem.fileName }}" />
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            </div>
+            </div>
+        </div>
+    </div>
+    <p class="lead">
+        <i class="icon-code"></i> &nbsp; Settings used for this example:
+    </p>    
+     <div class="flex-horizontal">
+        <div>
+            <p><strong>Component Inspector</strong></p>
+            <table>
+                <tr><td>Media Folder</td><td>plants-and-flowers</td></tr>
+                <tr><td>Max Images</td><td>12</td></tr>
+            </table>
+        </div>
+        <div>
+            <p><strong>Page HTML</strong></p>
+            <pre><code>{% filter escape %}{% verbatim %}<div class="container-fluid">
+{% for galleryitemchunk in customGallery.gallery.items.sortBy('fileName').chunk(3) %}
+    <div class="row">
+        {% for galleryitem in galleryitemchunk %}
+            <div class="col-xs-4" style="text-align: center;">
+                <a href="{{ galleryitem.url }}" target="_blank">
+                    <img src="{{ galleryitem.url | resize(280, false,  { mode: 'portrait', quality: '90', extension: 'png' }) }}" alt="{{ galleryitem.fileName }}" />
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+</div>{% endverbatim %}{% endfilter %}</code></pre>
+        </div>
+    </div>
+    <p>Explanation: We select the folder of images we wish to display in the component inspector and also limit the number of images to 12. We then write our own html/Twig markup to display these images as shown in the <i>Page HTML</i> box above.<br>
+    <br>We are assuming that your component has the alias "customGallery2." The images are sorted by filename and "chunked" into groups of 3 images, which are then displayed using the Bootstrap grid layout.</p>
+    <br>
+
+	
+    <!-- Details -->
+    <div id="additoinal-options" class="page-header">
+        <h2>Additional Options</h2>
+    </div>
+
+	{% partial 'componentInspectorOptions/image-list-only' %}
+    
+    <div class="text-center">
+			<p><a href="{{ 'demos/customization'|page }}" class="btn btn-lg btn-default">Continue to Customization</a></p>
+    </div>
+
+</div>
