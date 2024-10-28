@@ -5,6 +5,11 @@
 		}
 	],
 	"settings": {
-		"editor.autoClosingQuotes": "never"
+		"editor.autoClosingQuotes": "never",
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#073427",
+			"titleBar.activeBackground": "#094937",
+			"titleBar.activeForeground": "#EEFDF9"
+		}
 	}
 }
