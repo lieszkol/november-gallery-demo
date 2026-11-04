@@ -168,7 +168,7 @@ function onTest()
         </div>
         <div>
             <p><strong>Page HTML</strong></p>
-            <pre><code>{% filter escape %}<div id="videos"> 
+            <pre><code>{% apply escape %}<div id="videos"> 
     <div data-type="youtube"
     	 data-title="Waimea cliff jump"
     	 data-description="Waimea cliff jump description"
@@ -176,13 +176,13 @@ function onTest()
     	 data-image="https://i.ytimg.com/vi/sogCtOe8FFY/sddefault.jpg"
          data-videoid="sogCtOe8FFY" ></div>
     <!-- Further links to videos omitted for brevity... -->
-</div>{% endfilter %}</code></pre>
+</div>{% endapply %}</code></pre>
         </div>
         <div>
             <p><strong>Custom CSS</strong></p>
-            <pre><code>{% filter escape %}.ug-theme-video {
+            <pre><code>{% apply escape %}.ug-theme-video {
     margin: 0 auto;
-}{% endfilter %}</code></pre>
+}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: Instead of picking a media folder, we set the "Gallery Selector/ID" option in the component inspector. We then have to add a div that matches the specified selector, and add the gallery items <a href="http://unitegallery.net/index.php?page=video-items-syntax">as described here</a>. The div that we added is shown in the <i>Page HTML</i> box above.<br>
@@ -192,7 +192,7 @@ function onTest()
         <i class="icon-code"></i> &nbsp; <a href="#video-gallery-default-options" data-toggle="collapse" data-target="#video-gallery-default-options" onClick="return false;">Script options...</a>
     </p>
     <div id="video-gallery-default-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "video"                      //This is included automatically for all "video" galleries
 
@@ -200,7 +200,7 @@ theme_skin: "right-thumb"                   //right-thumb | right-title-only | r
                                             // - please use the OctoberCMS component inspector	to set this option!
                                             
 gallery_width:900,							//gallery width	- please use the OctoberCMS component inspector	to set this option!
-gallery_height:500,							//gallery height - please use the OctoberCMS component inspector to set this option!{% endfilter %}</code></pre>
+gallery_height:500,							//gallery height - please use the OctoberCMS component inspector to set this option!{% endapply %}</code></pre>
     </div>
     
     
@@ -265,7 +265,7 @@ gallery_height:500,							//gallery height - please use the OctoberCMS component
         </div>
         <div>
             <p><strong>Page HTML</strong></p>
-            <pre><code>{% filter escape %}<div id="videos-2"> 
+            <pre><code>{% apply escape %}<div id="videos-2"> 
     <div data-type="youtube"
     	 data-title="Waimea cliff jump"
     	 data-description="Waimea cliff jump description"
@@ -273,13 +273,13 @@ gallery_height:500,							//gallery height - please use the OctoberCMS component
     	 data-image="https://i.ytimg.com/vi/sogCtOe8FFY/sddefault.jpg"
          data-videoid="sogCtOe8FFY" ></div>
     <!-- Further links to videos omitted for brevity... -->
-</div>{% endfilter %}</code></pre>
+</div>{% endapply %}</code></pre>
         </div>
         <div>
             <p><strong>Custom CSS</strong></p>
-            <pre><code>{% filter escape %}.ug-theme-video {
+            <pre><code>{% apply escape %}.ug-theme-video {
     margin: 0 auto;
-}{% endfilter %}</code></pre>
+}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: Again we set the "Gallery Selector/ID" option in the component inspector and add a div that matches the specified selector, and add the gallery items inside that div <a href="http://unitegallery.net/index.php?page=video-items-syntax">as described here</a>. The div that we added is shown in the <i>Page HTML</i> box above.<br>
@@ -289,7 +289,7 @@ gallery_height:500,							//gallery height - please use the OctoberCMS component
         <i class="icon-code"></i> &nbsp; <a href="#video-gallery-titlesonly-options" data-toggle="collapse" data-target="#video-gallery-titlesonly-options" onClick="return false;">Script options...</a>
     </p>
     <div id="video-gallery-titlesonly-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "video"                      //This is included automatically for all "video" galleries
 
@@ -297,7 +297,7 @@ theme_skin: "right-title-only"              //right-thumb | right-title-only | r
                                             // - please use the OctoberCMS component inspector	to set this option!
                                             
 gallery_width:900,							//gallery width	- please use the OctoberCMS component inspector	to set this option!
-gallery_height:500,							//gallery height - please use the OctoberCMS component inspector to set this option!{% endfilter %}</code></pre>
+gallery_height:500,							//gallery height - please use the OctoberCMS component inspector to set this option!{% endapply %}</code></pre>
     </div>
     
     
@@ -362,7 +362,7 @@ gallery_height:500,							//gallery height - please use the OctoberCMS component
         </div>
         <div>
             <p><strong>Page HTML</strong></p>
-            <pre><code>{% filter escape %}<div id="videos-3"> 
+            <pre><code>{% apply escape %}<div id="videos-3"> 
     <div data-type="youtube"
     	 data-title="Waimea cliff jump"
     	 data-description="Waimea cliff jump description"
@@ -370,13 +370,13 @@ gallery_height:500,							//gallery height - please use the OctoberCMS component
     	 data-image="https://i.ytimg.com/vi/sogCtOe8FFY/sddefault.jpg"
          data-videoid="sogCtOe8FFY" ></div>
     <!-- Further links to videos omitted for brevity... -->
-</div>{% endfilter %}</code></pre>
+</div>{% endapply %}</code></pre>
         </div>
         <div>
             <p><strong>Custom CSS</strong></p>
-            <pre><code>{% filter escape %}.ug-theme-video {
+            <pre><code>{% apply escape %}.ug-theme-video {
     margin: 0 auto;
-}{% endfilter %}</code></pre>
+}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: This is the same as the previous gallery excep that we set the gallery layout to "No Thumbnails".</p>
@@ -385,7 +385,7 @@ gallery_height:500,							//gallery height - please use the OctoberCMS component
         <i class="icon-code"></i> &nbsp; <a href="#video-gallery-nothumbs-options" data-toggle="collapse" data-target="#video-gallery-nothumbs-options" onClick="return false;">Script options...</a>
     </p>
     <div id="video-gallery-nothumbs-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "video"                      //This is included automatically for all "video" galleries
 
@@ -393,7 +393,7 @@ theme_skin: "right-no-thumb"                //right-thumb | right-title-only | r
                                             // - please use the OctoberCMS component inspector	to set this option!
                                             
 gallery_width:900,							//gallery width	- please use the OctoberCMS component inspector	to set this option!
-gallery_height:500,							//gallery height - please use the OctoberCMS component inspector to set this option!{% endfilter %}</code></pre>
+gallery_height:500,							//gallery height - please use the OctoberCMS component inspector to set this option!{% endapply %}</code></pre>
     </div>
     
     
@@ -411,8 +411,8 @@ gallery_height:500,							//gallery height - please use the OctoberCMS component
         <i class="icon-code"></i> &nbsp; <a href="#video-gallery-options" data-toggle="collapse" data-target="#video-gallery-options" onClick="return false;">Script options applicable to all "Video" galleries...</a>
     </p>
     <div id="video-gallery-options" class="collapse">
-        <pre>{% filter escape %}theme_autoplay: false,				//autoplay videos at start.  true / false. Don't working on mobiles.
-theme_disable_panel_timeout:2500	//How much time the right panel will be disabled. in ms{% endfilter %}</pre>
+        <pre>{% apply escape %}theme_autoplay: false,				//autoplay videos at start.  true / false. Don't working on mobiles.
+theme_disable_panel_timeout:2500	//How much time the right panel will be disabled. in ms{% endapply %}</pre>
     </div>    
     <p>You can read more and see a lot of examples at <a href="http://unitegallery.net">the UniteGallery website!</a></p>
 

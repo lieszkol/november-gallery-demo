@@ -73,7 +73,7 @@ function onTest()
             
             {% component 'galleryHub' %}
 
-            {{ debug(galleryHub.galleries) }}
+            {{ dump(galleryHub.galleries) }}
 
         </div>
     </div>
@@ -95,7 +95,7 @@ function onTest()
         </div>
         <div>
             <p><strong>Page HTML</strong></p>
-            <pre><code>{% filter escape %}{% verbatim %}{% component 'galleryHub' %}{% endverbatim %}{% endfilter %}</code></pre>
+            <pre><code>{% apply escape %}{% verbatim %}{% component 'galleryHub' %}{% endverbatim %}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: We use the component inspector to set our options. We only wish to see galleries that we have added the "city" keyword to, so we set the "Hup Type" to "Keyword: city". Note that this option only works with galleries created through the "Galleries" back-end page, since it's not possible to add "keywords" to galleries uploaded into a folder using the OctoberCMS media manager. We also have to set the "Link URL", since this is required. We leave everything else as-is. We don't need to write any custom html/Twig markup, all we need is the component tag as shown in the <i>Page HTML</i> box above.<br>
@@ -136,7 +136,7 @@ function onTest()
         </div>
         <div>
             <p><strong>Page HTML</strong></p>
-            <pre><code>{% filter escape %}{% verbatim %}{% component 'galleryHub2' %}{% endverbatim %}{% endfilter %}</code></pre>
+            <pre><code>{% apply escape %}{% verbatim %}{% component 'galleryHub2' %}{% endverbatim %}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: The only difference from the previous example is that we are showing all galleries with the keyword "Water", and we set the hub to display as a "List of Links with Title Only."</p>
@@ -172,13 +172,13 @@ function onTest()
                 <tr><td>Open in new tab?</td><td>Checked</td></tr>
                 <tr><td>Display as</td><td>Set the Template Below</td></tr>
                 <tr><td>Link Template</td><td>
-					<pre><code>{% filter escape %}{% verbatim %}<div style="width: 100px; height: 100px; margin: 10px; float: left; background: black url('%preview_image_url%') center center/cover; display: flex; align-items: center;"><a href="%url%" style="color: white; text-shadow: 0px 0px 7px #000000; text-align: center;">%name%</a></div>{% endverbatim %}{% endfilter %}</code></pre>	
+					<pre><code>{% apply escape %}{% verbatim %}<div style="width: 100px; height: 100px; margin: 10px; float: left; background: black url('%preview_image_url%') center center/cover; display: flex; align-items: center;"><a href="%url%" style="color: white; text-shadow: 0px 0px 7px #000000; text-align: center;">%name%</a></div>{% endverbatim %}{% endapply %}</code></pre>	
 				</td></tr>
             </table>
         </div>
         <div>
             <p><strong>Page HTML</strong></p>
-            <pre><code>{% filter escape %}{% verbatim %}{% component 'galleryHub3' %}{% endverbatim %}{% endfilter %}</code></pre>
+            <pre><code>{% apply escape %}{% verbatim %}{% component 'galleryHub3' %}{% endverbatim %}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: in this example we set the "Display as" option to "Set the Template Below" so we can define our own template. We then use some placeholders that will be replaced with values taken from the given gallery. Some of the available placeholders are:
@@ -221,7 +221,7 @@ function onTest()
             
             {% component 'galleryHub4' %}
 			
-			{{ debug(galleryHub4.galleries) }}
+			{{ dump(galleryHub4.galleries) }}
 
 			{% set galleries = galleryHub4.galleries %}
 
@@ -288,7 +288,7 @@ function onTest()
         </div>
         <div style="max-width: 100%;">
             <p><strong>Page HTML</strong></p>
-            <pre style="overflow-x: scroll;"><code style="display: block; white-space: pre;">{% filter escape %}{% verbatim %}{% component 'galleryHub4' %}
+            <pre style="overflow-x: scroll;"><code style="display: block; white-space: pre;">{% apply escape %}{% verbatim %}{% component 'galleryHub4' %}
 {{ debug(galleryHub4.galleries) }}
 {% set galleries = galleryHub4.galleries %}
 {% if galleries|length > 0 %}
@@ -330,18 +330,18 @@ function onTest()
 		{% endfor %}
 		</table>
 	</div>
-{% endif %}{% endverbatim %}{% endfilter %}</code></pre>
+{% endif %}{% endverbatim %}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: here we illustrate how you can write your own Twig code to render your gallery hub page. We set the "Display as" to "Write your own Twig code". This way the component will not render any links. The Galleries that match the criteria set in "Hub Type" using the component inspector will be avaiable from the page variable <code>galleryHub.galleries</code>, where "galleryHub" should be replaced with the alias of your component. The collection includes information about each gallery. In case of galleries uploaded using the "Galleries" back-end page, the collection will even include information on the images in those galleries. So, if you wanted, you could write code to render all of the images in all of the matching galleries. In this example we show some information about the galleries, the preview image, and the first three images in each gallery.</p>
 	<p>
-	Hint: To dig into the galleries (or any other) variable/collection, you have two options. You can simply add <code>{% filter escape %}{% verbatim %}{{ dump(galleryHub.galleries.toArray) }}{% endverbatim %}{% endfilter %}</code> on your page after the component definition and it will print debug information about that variable straight in your page. You should then see something like this:</p>
+	Hint: To dig into the galleries (or any other) variable/collection, you have two options. You can simply add <code>{% apply escape %}{% verbatim %}{{ dump(galleryHub.galleries.toArray) }}{% endverbatim %}{% endapply %}</code> on your page after the component definition and it will print debug information about that variable straight in your page. You should then see something like this:</p>
 	{{ dump(galleryHub.galleries.toArray) }}
-	<p>Click any of the gallery names to "drill-down" and see its public properties. To see all of the properties of the components itself, do: <code>{% filter escape %}{% verbatim %}{{ dump(galleryHub.toArray) }}{% endverbatim %}{% endfilter %}</code>. The result in this instance is:
+	<p>Click any of the gallery names to "drill-down" and see its public properties. To see all of the properties of the components itself, do: <code>{% apply escape %}{% verbatim %}{{ dump(galleryHub.toArray) }}{% endverbatim %}{% endapply %}</code>. The result in this instance is:
 	</p>
 	{{ dump(galleryHub.toArray) }}
 	<p><a href="https://twig.symfony.com/doc/2.x/functions/dump.html" target="_blank">Learn more aboud <i>dump</i> in the official Twig docs</a>. Note that "the dump function won’t display anything if the debug option on the environment is not enabled". To enable debug mode on your site, edit the app.php config file in your config directory. Learn more about debug mode <a href="https://octobercms.com/docs/setup/configuration#debug-mode">in the OctoberCMS docs!</a></p>
-	<p>Alternatively, you can install the Debugbar plugin and then add <code>{% filter escape %}{% verbatim %}{{ debug(galleryHub.galleries) }}{% endverbatim %}{% endfilter %}</code> to your page to show debug information in the Laravel debugbar. To see all public properties of a gallery, do: <code>{% filter escape %}{% verbatim %}{{ debug(galleryHub.galleries.first.toArray) }}{% endverbatim %}{% endfilter %}</code>. Make sure to replace "galleryHub" with the alias of your component as set in the component options!</p>
+	<p>Alternatively, you can install the Debugbar plugin and then add <code>{% apply escape %}{% verbatim %}{{ debug(galleryHub.galleries) }}{% endverbatim %}{% endapply %}</code> to your page to show debug information in the Laravel debugbar. To see all public properties of a gallery, do: <code>{% apply escape %}{% verbatim %}{{ debug(galleryHub.galleries.first.toArray) }}{% endverbatim %}{% endapply %}</code>. Make sure to replace "galleryHub" with the alias of your component as set in the component options!</p>
 
     
     

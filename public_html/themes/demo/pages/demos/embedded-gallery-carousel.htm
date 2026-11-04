@@ -60,9 +60,9 @@ function onTest()
         </div>
         <div>
             <p><strong>Custom CSS</strong></p>
-            <pre><code>{% filter escape %}.ug-theme-carousel .ug-thumb-wrapper {
+            <pre><code>{% apply escape %}.ug-theme-carousel .ug-thumb-wrapper {
     border-color: #3097d1 !important;
-}{% endfilter %}</code></pre>
+}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: The gallery layout is set to "Carousel" in the component inspector. Since we haven't specified a thumbnail width in the inspector, it falls back on the value set on the plugin backend settings page, which is 150. We add a CSS rule (in a stylesheet that we manually add to our layout) to set the border color to blue for all "ug-thumb-wrapper" elements inside all "ug-theme-carousel" themed galleries.</p>
@@ -73,7 +73,7 @@ function onTest()
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-carousel-options" data-toggle="collapse" data-target="#embedded-gallery-carousel-options" onClick="return false;">Script options...</a>
     </p>
     <div id="embedded-gallery-carousel-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "carousel"               //This is included automatically if you select this layout in the OctoberCMS component inspector!
 tile_width: 160,						//tile width - please use the OctoberCMS component inspector	to set this option!
@@ -113,7 +113,7 @@ theme_navigation_enable_play: true,		//enable / disable the play button of the n
 theme_navigation_align: "center",		//the align of the navigation
 theme_navigation_offset_hor: 0,			//horizontal offset of the navigation
 theme_navigation_margin: 20,			//the space between the carousel and the navigation
-theme_space_between_arrows: 5			//the space between arrows in the navigation{% endfilter %}</code></pre>
+theme_space_between_arrows: 5			//the space between arrows in the navigation{% endapply %}</code></pre>
     </div>
     
     
@@ -133,7 +133,7 @@ theme_space_between_arrows: 5			//the space between arrows in the navigation{% e
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-options" data-toggle="collapse" data-target="#embedded-gallery-options" onClick="return false;">Script options applicable to all "Carousel" galleries...</a>
     </p>
     <div id="embedded-gallery-options" class="collapse">
-        <pre>{% filter escape %}//tile design options:
+        <pre>{% apply escape %}//tile design options:
 															
 tile_enable_border:true,			//enable border of the tile
 tile_border_width:3,				//tile border width
@@ -254,7 +254,7 @@ lightbox_textpanel_desc_font_family:null,			//textpanel description font family.
 lightbox_textpanel_desc_text_align:null,			//textpanel description text align. if null - take from css
 lightbox_textpanel_desc_font_size:null,				//textpanel description font size. if null - take from css
 lightbox_textpanel_desc_bold:null,					//textpanel description bold. if null - take from css
-lightbox_textpanel_css_description:{},				//textpanel additional css of the description{% endfilter %}</pre>
+lightbox_textpanel_css_description:{},				//textpanel additional css of the description{% endapply %}</pre>
     </div>    
     <p>You can read more and see a lot of examples at <a href="http://unitegallery.net">the UniteGallery website!</a></p>
 

@@ -110,9 +110,9 @@ function onTest()
 		</div>
 		<div>
 			<p><strong>Page HTML</strong></p>
-<pre><code>{% filter escape %}{% verbatim %}<div style="width: 100%; height: calc(100vh - 70px);">
+<pre><code>{% apply escape %}{% verbatim %}<div style="width: 100%; height: calc(100vh - 70px);">
 	{% component 'swiperGallery' %}
-</div>{% endverbatim %}{% endfilter %}</code></pre>
+</div>{% endverbatim %}{% endapply %}</code></pre>
 		</div>
 	</div>
 	<p>Explanation: We set the folder of images that we wish to display and set the transition type to "Slide". The swiper component by default fills whatever space it is in, in this case we set the container DIV to take up 100% of the viewport and be 100vh tall (inline styles are frowned upon but this is a demo!). Note that for android devices you may want to add some additional logic to deal with the ever-appearing-disappearing address bar.</p>
@@ -148,9 +148,9 @@ function onTest()
         </div>
         <div>
             <p><strong>Page HTML</strong></p>
-<pre><code>{% filter escape %}{% verbatim %}<div style="width: 1008px; height: 630px; margin: 0 auto;">
+<pre><code>{% apply escape %}{% verbatim %}<div style="width: 1008px; height: 630px; margin: 0 auto;">
 	{% component 'swiperGallery2' %}
-</div>{% endverbatim %}{% endfilter %}</code></pre>
+</div>{% endverbatim %}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: We set the folder of images that we wish to display and set the transition type to "Swipe", and the direction to "Vertical", and we hide the navigation arrows. We set the container DIV to have a specific width and height (inline styles are frowned upon but this is a demo!).</p>
@@ -199,7 +199,7 @@ function onTest()
         </div>
         <div>
             <p><strong>Page HTML</strong></p>
-<pre><code>{% filter escape %}{% verbatim %}<div id="swiper-cube-demo" style="width: 504px; height: 315px; margin: 0 auto; margin-bottom: 70px;">
+<pre><code>{% apply escape %}{% verbatim %}<div id="swiper-cube-demo" style="width: 504px; height: 315px; margin: 0 auto; margin-bottom: 70px;">
 	{% put styles %}
 	<style>
 		#swiper-cube-demo .swiper-pagination {
@@ -212,7 +212,7 @@ function onTest()
 	</style>
 	{% endput %}
 	{% component 'swiperGallery3' %}
-</div>{% endverbatim %}{% endfilter %}</code></pre>
+</div>{% endverbatim %}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: We set the folder of images that we wish to display and set the transition type to "Cube". The cube animation effect is very resource-intensive, so we make the gallery size small and set the transition duration to 3 seconds. We add some CSS to pull the navigator component down below the slides, and set the active bullet to be red.</p>
@@ -276,7 +276,7 @@ function onTest()
 		</div>
 		<div>
 			<p><strong>Page HTML</strong></p>
-<pre><code>{% filter escape %}{% verbatim %}
+<pre><code>{% apply escape %}{% verbatim %}
 <div id="swiper-coverflow-demo" style="width: 100%; height: 315px;">
 	{% put styles %}
 	<style>
@@ -295,7 +295,7 @@ function onTest()
 	</style>
 	{% endput %}
 	{% component 'swiperGallery4' %}
-</div>{% endverbatim %}{% endfilter %}</code></pre>
+</div>{% endverbatim %}{% endapply %}</code></pre>
 		</div>
 	</div>
 	<p>Explanation: We set the folder of images that we wish to display and set the transition type to "Coverflow". This animation effect is very resource-intensive, so we make the gallery size small and set the transition duration to 2 seconds. We add some CSS as well as some custom options, which were taken from the swiper <a href="https://idangero.us/swiper/demos/240-effect-coverflow.html"demo page</a> with <a href="https://github.com/nolimits4web/Swiper/blob/master/demos/240-effect-coverflow.html">source code</a> for "Coverflow".</p>
@@ -341,9 +341,9 @@ function onTest()
 		</div>
 		<div>
 			<p><strong>Page HTML</strong></p>
-<pre><code>{% filter escape %}{% verbatim %}<div style="width: 1008px; height: 630px; margin: 0 auto;">
+<pre><code>{% apply escape %}{% verbatim %}<div style="width: 1008px; height: 630px; margin: 0 auto;">
 	{% component 'swiperGallery2' %}
-</div>{% endverbatim %}{% endfilter %}</code></pre>
+</div>{% endverbatim %}{% endapply %}</code></pre>
 		</div>
 	</div>
 	<p>Explanation: We set the folder of images that we wish to display and set the transition type to "Flip". We set the container DIV to fill its parent horizontally.</p>
@@ -404,11 +404,11 @@ function onTest()
 					<td>object/boolean</td>
 					<td></td>
 					<td>Enables images lazy loading. Object with lazy loading parameters or boolean true to enable with default settings. For example:
-<pre><code>{% filter escape %}{% verbatim %}var mySwiper = new Swiper('.swiper-container', {
+<pre><code>{% apply escape %}{% verbatim %}var mySwiper = new Swiper('.swiper-container', {
 	lazy: {
 		loadPrevNext: true,
 	},
-});{% endverbatim %}{% endfilter %}</code></pre>
+});{% endverbatim %}{% endapply %}</code></pre>
 					<a href="https://idangero.us/swiper/api/#lazy">See the original docs!</a>
 					</td>
 				</tr>
@@ -418,12 +418,12 @@ function onTest()
 					<td>object/boolean</td>
 					<td></td>
 					<td>Object with pagination parameters. For example:
-<pre><code>{% filter escape %}{% verbatim %}var mySwiper = new Swiper('.swiper-container', {
+<pre><code>{% apply escape %}{% verbatim %}var mySwiper = new Swiper('.swiper-container', {
 	pagination: {
 		el: '.swiper-pagination',
 		type: 'bullets',
 	},
-});{% endverbatim %}{% endfilter %}</code></pre>
+});{% endverbatim %}{% endapply %}</code></pre>
 					<a href="https://idangero.us/swiper/api/#pagination">See the original docs!</a>
 					</td>
 				</tr>
@@ -433,12 +433,12 @@ function onTest()
 					<td>object/boolean</td>
 					<td></td>
 					<td>Object with navigation parameters. For example:
-<pre><code>{% filter escape %}{% verbatim %}var mySwiper = new Swiper('.swiper-container', {
+<pre><code>{% apply escape %}{% verbatim %}var mySwiper = new Swiper('.swiper-container', {
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
-});{% endverbatim %}{% endfilter %}</code></pre>
+});{% endverbatim %}{% endapply %}</code></pre>
 					<a href="https://idangero.us/swiper/api/#navigation">See the original docs!</a>
 					</td>
 				</tr>
@@ -448,11 +448,11 @@ function onTest()
 					<td>object/boolean</td>
 					<td></td>
 					<td>Object with autoplay parameters or boolean true to enable with default settings. For example:
-<pre><code>{% filter escape %}{% verbatim %}var mySwiper = new Swiper('.swiper-container', {
+<pre><code>{% apply escape %}{% verbatim %}var mySwiper = new Swiper('.swiper-container', {
 	autoplay: {
 		delay: 5000,
 	},
-});{% endverbatim %}{% endfilter %}</code></pre>
+});{% endverbatim %}{% endapply %}</code></pre>
 					<a href="https://idangero.us/swiper/api/#autoplay">See the original docs!</a>
 					</td>
 				</tr>

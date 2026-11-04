@@ -62,7 +62,7 @@ function onTest()
         </div>
         <div>
             <p><strong>Page HTML</strong></p>
-            <pre><code>{% filter escape %}<button id="gallery-button" class="btn btn-primary">Click me!</button>{% endfilter %}</code></pre>
+            <pre><code>{% apply escape %}<button id="gallery-button" class="btn btn-primary">Click me!</button>{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: We set the "Attach-to" property in the component inspector to the ID of the button element that we want to trigger the gallery from. The script will then add an "on-click" event handler to this button that opens the gallery when it is clicked. We also select the folder of images that we wish to display and set the lightbox type to "Wide". The button that we added to the page is shown in the <i>Page HTML</i> box above.</p>
@@ -71,10 +71,10 @@ function onTest()
         <i class="icon-code"></i> &nbsp; <a href="#popup-lightbox-wide-options" data-toggle="collapse" data-target="#popup-lightbox-wide-options" onClick="return false;">Script options...</a>
     </p>
     <div id="popup-lightbox-wide-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "lightbox"                   //This is included automatically for all "Popup Lightbox" galleries
-lightbox_type: "wide",				    	//compact / wide - please use the OctoberCMS component inspector to set this option!{% endfilter %}</code></pre>
+lightbox_type: "wide",				    	//compact / wide - please use the OctoberCMS component inspector to set this option!{% endapply %}</code></pre>
     </div>
     
     
@@ -108,7 +108,7 @@ lightbox_type: "wide",				    	//compact / wide - please use the OctoberCMS comp
         </div>
         <div>
             <p><strong>Page HTML</strong></p>
-            <pre><code>{% filter escape %}<button id="gallery-button-2" class="btn btn-primary">Click me!</button>{% endfilter %}</code></pre>
+            <pre><code>{% apply escape %}<button id="gallery-button-2" class="btn btn-primary">Click me!</button>{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: We set the "Attach-to" property in the component inspector to the ID of the button element that we want to trigger the gallery from. The script will then add an "on-click" event handler to this button that opens the gallery when it is clicked. We also select the folder of images that we wish to display and set the lightbox type to "Compact". We also add some script options to hide the image numbers and change the image border from the default of 10 to a wider 20 pixels. The button that we added to the page is shown in the <i>Page HTML</i> box above.</p>
@@ -117,10 +117,10 @@ lightbox_type: "wide",				    	//compact / wide - please use the OctoberCMS comp
         <i class="icon-code"></i> &nbsp; <a href="#popup-lightbox-default-options" data-toggle="collapse" data-target="#popup-lightbox-default-options" onClick="return false;">Script options...</a>
     </p>
     <div id="popup-lightbox-default-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "lightbox"                   //This is included automatically for all "Popup Lightbox" galleries
-lightbox_type: "compact",					//compact / wide - please use the OctoberCMS component inspector to set this option!{% endfilter %}</code></pre>
+lightbox_type: "compact",					//compact / wide - please use the OctoberCMS component inspector to set this option!{% endapply %}</code></pre>
     </div>
     
     
@@ -138,7 +138,7 @@ lightbox_type: "compact",					//compact / wide - please use the OctoberCMS compo
         <i class="icon-code"></i> &nbsp; <a href="#popup-lightbox-options" data-toggle="collapse" data-target="#popup-lightbox-options" onClick="return false;">Script options applicable to all "Popup Lightbox" galleries...</a>
     </p>
     <div id="popup-lightbox-options" class="collapse">
-        <pre>{% filter escape %}//lightbox options:
+        <pre>{% apply escape %}//lightbox options:
 					
 lightbox_hide_arrows_onvideoplay: true,			//hide the arrows when video start playing and show when stop
 lightbox_arrows_position: "sides",				//sides, inside: position of the arrows, used on compact type			
@@ -193,7 +193,7 @@ lightbox_textpanel_desc_font_family:null,			//textpanel description font family.
 lightbox_textpanel_desc_text_align:null,			//textpanel description text align. if null - take from css
 lightbox_textpanel_desc_font_size:null,				//textpanel description font size. if null - take from css
 lightbox_textpanel_desc_bold:null,					//textpanel description bold. if null - take from css
-lightbox_textpanel_css_description:{},				//textpanel additional css of the description{% endfilter %}</pre>
+lightbox_textpanel_css_description:{},				//textpanel additional css of the description{% endapply %}</pre>
     </div>    
     <p>You can read more and see a lot of examples at <a href="http://unitegallery.net">the UniteGallery website!</a></p>
 

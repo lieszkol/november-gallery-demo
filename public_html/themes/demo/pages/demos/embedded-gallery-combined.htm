@@ -79,9 +79,9 @@ function onTest()
         </div>
         <div>
             <p><strong>Custom CSS</strong></p>
-            <pre><code>{% filter escape %}.ug-theme-default {
+            <pre><code>{% apply escape %}.ug-theme-default {
     margin: 0 auto;
-}{% endfilter %}</code></pre>
+}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: We set the gallery layout to "Combined" in the component inspector and the thumbnails layout to "Normal". We also specify an explicit width and height for the gallery that matches the proportions of our pictures (roughly taking into account the height of the thumbs panel). Since we haven't specified a thumbnail width and height in the inspector, it falls back on the values set on the plugin backend settings page, which are 150 and 100, respectively. We also add a custom script option to disable "avia" control, because it is more annoying than cool. We add a CSS rule (in a stylesheet that we manually add to our layout) to center all galleries with the "default" theme within their container.</p>
@@ -92,7 +92,7 @@ function onTest()
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-combined-normal-options" data-toggle="collapse" data-target="#embedded-gallery-combined-normal-options" onClick="return false;">Script options...</a>
     </p>
     <div id="embedded-gallery-combined-normal-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_width:900,							//gallery width	- please use the OctoberCMS component inspector	to set this option!
 gallery_height:500,							//gallery height - please use the OctoberCMS component inspector	to set this option!
@@ -136,7 +136,7 @@ strip_thumb_touch_sensetivity:15,  			//from 1-100, 1 - most sensetive, 100 - mo
 strip_scroll_to_thumb_duration:500,			//duration of scrolling to thumb
 strip_scroll_to_thumb_easing:"easeOutCubic", //easing of scrolling to thumb animation
 strip_control_avia:true,					//avia control - move the strip according strip moseover position
-strip_control_touch:true,					//touch control - move the strip by dragging it{% endfilter %}</code></pre>
+strip_control_touch:true,					//touch control - move the strip by dragging it{% endapply %}</code></pre>
     </div>
     
     
@@ -169,10 +169,10 @@ strip_control_touch:true,					//touch control - move the strip by dragging it{% 
         </div>
         <div>
             <p><strong>Custom CSS</strong></p>
-            <pre><code>{% filter escape %}.ug-theme-compact,
+            <pre><code>{% apply escape %}.ug-theme-compact,
 .ug-theme-grid {
     margin: 0 auto;
-}{% endfilter %}</code></pre>
+}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: We set the gallery layout to "Combined" in the component inspector and the thumbnails layout to "Compact". We also specify an explicit width and height for the gallery that matches the proportions of our pictures  (roughly taking into account the width of the thumbs panel). Since we haven't specified a thumbnail width and height in the inspector, it falls back on the values set on the plugin backend settings page, which are 150 and 100, respectively. We also add a custom script option to display the thumbs panel on the top side of the main image instead of the bottom. We add a CSS rule (in a stylesheet that we manually add to our layout) to center all galleries with the "default" theme within their container.</p>
@@ -183,7 +183,7 @@ strip_control_touch:true,					//touch control - move the strip by dragging it{% 
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-combined-compact-options" data-toggle="collapse" data-target="#embedded-gallery-combined-compact-options" onClick="return false;">Script options...</a>
     </p>
     <div id="embedded-gallery-combined-compact-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "compact"                  //This is included automatically if you select this layout in the OctoberCMS component inspector!
 gallery_width:900,							//gallery width	- please use the OctoberCMS component inspector	to set this option!
@@ -220,7 +220,7 @@ strip_thumb_touch_sensetivity:15,  			//from 1-100, 1 - most sensetive, 100 - mo
 strip_scroll_to_thumb_duration:500,			//duration of scrolling to thumb
 strip_scroll_to_thumb_easing:"easeOutCubic", //easing of scrolling to thumb animation
 strip_control_avia:true,					//avia control - move the strip according strip moseover position
-strip_control_touch:true,					//touch control - move the strip by dragging it{% endfilter %}</code></pre>
+strip_control_touch:true,					//touch control - move the strip by dragging it{% endapply %}</code></pre>
     </div>
     
     
@@ -253,9 +253,9 @@ strip_control_touch:true,					//touch control - move the strip by dragging it{% 
         </div>
         <div>
             <p><strong>Custom CSS</strong></p>
-            <pre><code>{% filter escape %}.ug-theme-grid {
+            <pre><code>{% apply escape %}.ug-theme-grid {
     margin: 0 auto;
-}{% endfilter %}</code></pre>
+}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: We set the gallery layout to "Combined" in the component inspector and the thumbnails layout to "Grid". We also specify an explicit width and height for the gallery that matches the proportions of our pictures. Since we haven't specified a thumbnail width and height in the inspector, it falls back on the values set on the plugin backend settings page, which are 150 and 100, respectively. We also add a custom script option to display the thumbs panel on the top right of the main image instead of the bottom. We add a CSS rule (in a stylesheet that we manually add to our layout) to center all galleries with the "grid" theme within their container.</p>
@@ -266,7 +266,7 @@ strip_control_touch:true,					//touch control - move the strip by dragging it{% 
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-combined-grid-options" data-toggle="collapse" data-target="#embedded-gallery-combined-grid-options" onClick="return false;">Script options...</a>
     </p>
     <div id="embedded-gallery-combined-grid-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "grid"                  //This is included automatically if you select this layout in the OctoberCMS component inspector!
 gallery_width:900,							//gallery width	- please use the OctoberCMS component inspector	to set this option!
@@ -320,7 +320,7 @@ grid_space_between_cols: 10,				//space between columns
 grid_space_between_rows: 10,				//space between rows
 grid_transition_duration: 300,				//transition of the panes change duration 
 grid_transition_easing: "easeInOutQuad",	//transition of the panes change easing function
-grid_carousel: false						//next pane goes to first when last% endfilter %}{% endfilter %}</code></pre>
+grid_carousel: false						//next pane goes to first when last% endfilter %}{% endapply %}</code></pre>
     </div>
     
     
@@ -338,7 +338,7 @@ grid_carousel: false						//next pane goes to first when last% endfilter %}{% en
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-options" data-toggle="collapse" data-target="#embedded-gallery-options" onClick="return false;">Script options applicable to all "Combined" galleries...</a>
     </p>
     <div id="embedded-gallery-options" class="collapse">
-        <pre>{% filter escape %}theme_hide_panel_under_width: 480		//hide panel under certain browser width, if null, don't hide
+        <pre>{% apply escape %}theme_hide_panel_under_width: 480		//hide panel under certain browser width, if null, don't hide
 
 // gallery options
 
@@ -512,7 +512,7 @@ thumb_transition_duration: 200,				//thumb effect transition duration
 thumb_transition_easing: "easeOutQuad",		//thumb effect transition easing
 
 thumb_show_loader:true,						//show thumb loader while loading the thumb
-thumb_loader_type:"dark",					//dark, light - thumb loader type{% endfilter %}</pre>
+thumb_loader_type:"dark",					//dark, light - thumb loader type{% endapply %}</pre>
     </div>    
     <p>You can read more and see a lot of examples at <a href="http://unitegallery.net">the UniteGallery website!</a></p>
 

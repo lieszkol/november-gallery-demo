@@ -56,9 +56,9 @@ function onTest()
         </div>
         <div>
             <p><strong>Custom CSS</strong></p>
-            <pre><code>{% filter escape %}.ug-theme-slider {
+            <pre><code>{% apply escape %}.ug-theme-slider {
     margin: 0 auto;
-}{% endfilter %}</code></pre>
+}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: We set the gallery layout to "Slider" in the component inspector. We also specify an explicit width and height for the gallery that matches the proportions of our pictures. We add a CSS rule (in a stylesheet that we manually add to our layout) to center all galleries with the "slider" theme within their container.</p>
@@ -69,7 +69,7 @@ function onTest()
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-carousel-options" data-toggle="collapse" data-target="#embedded-gallery-carousel-options" onClick="return false;">Script options...</a>
     </p>
     <div id="embedded-gallery-carousel-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "slider"                     //This is included automatically if you select this layout in the OctoberCMS component inspector!
 gallery_width:900,							//gallery width	- please use the OctoberCMS component inspector	to set this option!
@@ -105,7 +105,7 @@ slider_scale_mode: "fill",					//fit: scale down and up the image to always fit 
 											//down: scale down only, smaller images will be shown, don't enlarge images (scale up)
 											//fill: fill the entire slider space by scaling, cropping and centering the image
 slider_scale_mode_media: "fill",			//fit, down, full scale mode on media items
-slider_scale_mode_fullscreen: "down",		//fit, down, full scale mode on fullscreen.{% endfilter %}</code></pre>
+slider_scale_mode_fullscreen: "down",		//fit, down, full scale mode on fullscreen.{% endapply %}</code></pre>
     </div>
     
     
@@ -125,7 +125,7 @@ slider_scale_mode_fullscreen: "down",		//fit, down, full scale mode on fullscree
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-options" data-toggle="collapse" data-target="#embedded-gallery-options" onClick="return false;">Script options applicable to all "Slider" galleries...</a>
     </p>
     <div id="embedded-gallery-options" class="collapse">
-        <pre>{% filter escape %}//slider options: 
+        <pre>{% apply escape %}//slider options: 
 
 slider_item_padding_top: 0,					//padding top of the slider item
 slider_item_padding_bottom: 0,				//padding bottom of the slider item
@@ -238,7 +238,7 @@ slider_textpanel_desc_font_size:null,			//textpanel description font size. if nu
 slider_textpanel_desc_bold:null,				//textpanel description bold. if null - take from css
 slider_textpanel_css_description:{},			//textpanel additional css of the description
 
-slider_textpanel_bg_css:{},						//textpanel background css{% endfilter %}</pre>
+slider_textpanel_bg_css:{},						//textpanel background css{% endapply %}</pre>
     </div>    
     <p>You can read more and see a lot of examples at <a href="http://unitegallery.net">the UniteGallery website!</a></p>
 

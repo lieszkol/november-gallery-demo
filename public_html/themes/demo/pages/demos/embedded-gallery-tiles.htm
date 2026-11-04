@@ -95,9 +95,9 @@ function onTest()
         </div>
         <div>
             <p><strong>Custom CSS</strong></p>
-            <pre><code>{% filter escape %}.ug-theme-tiles {
+            <pre><code>{% apply escape %}.ug-theme-tiles {
     margin: 0 auto;
-}{% endfilter %}</code></pre>
+}{% endapply %}</code></pre>
         </div>
     </div>
     <p>Explanation: The gallery layout is set to "Tiles" in the component inspector and thus the "Tile Layout" option also becomes relevant - we set it to "Columns". For this demo we set the gallery width to 80% (of the parent container). If we left this option blank the gallery would fill up all available space. Since we haven't specified a thumbnail width in the inspector, it falls back on the value set on the plugin backend settings page, which is 150. We add a CSS rule (in a stylesheet that we manually add to our layout) to center all elements with class "ug-theme-tiles" within their layout.</p>
@@ -108,7 +108,7 @@ function onTest()
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-tiles-columns-options" data-toggle="collapse" data-target="#embedded-gallery-tiles-columns-options" onClick="return false;">Script options...</a>
     </p>
     <div id="embedded-gallery-tiles-columns-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "tiles"                  //This is included automatically if you select this layout in the OctoberCMS component inspector!
 tiles_type: "columns",	        		//This is included automatically if you select this thumbnail layout in the OctoberCMS component inspector!
@@ -127,7 +127,7 @@ tiles_min_columns: 2,					//min columns
 tiles_max_columns: 0,					//max columns (0 for unlimited)
 
 tiles_set_initial_height: true,			//columns type related only
-tiles_enable_transition: true,			//enable transition when screen width change{% endfilter %}</code></pre>
+tiles_enable_transition: true,			//enable transition when screen width change{% endapply %}</code></pre>
     </div>
     
     
@@ -166,7 +166,7 @@ tiles_enable_transition: true,			//enable transition when screen width change{% 
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-tiles-justified-options" data-toggle="collapse" data-target="#embedded-gallery-tiles-justified-options" onClick="return false;">Script options...</a>
     </p>
     <div id="embedded-gallery-tiles-justified-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "tiles"                  //This is included automatically if you select this layout in the OctoberCMS component inspector!
 tiles_type: "justified",	        	//This is included automatically if you select this thumbnail layout in the OctoberCMS component inspector!
@@ -177,7 +177,7 @@ gallery_width:900,						//gallery width	- please use the OctoberCMS component in
 
 tiles_justified_space_between: 3,	//space between the tiles justified type
 tiles_set_initial_height: true,			//columns type related only
-tiles_enable_transition: true,			//enable transition when screen width change{% endfilter %}</code></pre>
+tiles_enable_transition: true,			//enable transition when screen width change{% endapply %}</code></pre>
     </div>
     
     
@@ -220,7 +220,7 @@ tiles_enable_transition: true,			//enable transition when screen width change{% 
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-tiles-nested-options" data-toggle="collapse" data-target="#embedded-gallery-tiles-nested-options" onClick="return false;">Script options...</a>
     </p>
     <div id="embedded-gallery-tiles-nested-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "tiles"                  //This is included automatically if you select this layout in the OctoberCMS component inspector!
 tiles_type: "nested",	        		//This is included automatically if you select this thumbnail layout in the OctoberCMS component inspector!
@@ -234,7 +234,7 @@ tiles_space_between_cols_mobile: 3,     //space between cols for mobile type
 tiles_min_columns: 2,					//min columns - for mobile size, for 1 column, type 1
 
 tiles_set_initial_height: true,			//columns type related only
-tiles_enable_transition: true,			//enable transition when screen width change{% endfilter %}</code></pre>
+tiles_enable_transition: true,			//enable transition when screen width change{% endapply %}</code></pre>
     </div>
     
     
@@ -278,7 +278,7 @@ tiles_enable_transition: true,			//enable transition when screen width change{% 
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-tiles-grid-options" data-toggle="collapse" data-target="#embedded-gallery-tiles-grid-options" onClick="return false;">Script options...</a>
     </p>
     <div id="embedded-gallery-tiles-grid-options" class="collapse">
-        <pre><code>{% filter escape %}// Options that can be set from the OctoberCMS component inspector: 
+        <pre><code>{% apply escape %}// Options that can be set from the OctoberCMS component inspector: 
         
 gallery_theme: "tilesgrid"                  //This is included automatically if you select this layout in the OctoberCMS component inspector!
 tile_width: 250,	//tile width	- please use the OctoberCMS component inspector	"Thumbnail Wdith" to set this option!
@@ -302,7 +302,7 @@ theme_arrows_margin_top: 20,			//the space between arrows and grid
 theme_space_between_arrows: 5,			//horizontal space between arrows
 theme_navigation_align: "center",		//center, left, right - horizontal align of the navigation
 theme_navigation_offset_hor: 0,			//horizontal offset of the navigation, according the align
-        {% endfilter %}</code></pre>
+        {% endapply %}</code></pre>
     </div>
     
     
@@ -319,7 +319,7 @@ theme_navigation_offset_hor: 0,			//horizontal offset of the navigation, accordi
         <i class="icon-code"></i> &nbsp; <a href="#embedded-gallery-tiles-options" data-toggle="collapse" data-target="#embedded-gallery-tiles-options" onClick="return false;">Script options applicable to all "Tile" galleries...</a>
     </p>
     <div id="embedded-gallery-tiles-options" class="collapse">
-        <pre>{% filter escape %}// theme options:
+        <pre>{% apply escape %}// theme options:
 
 theme_enable_preloader: true,		//enable preloader circle
 theme_preloading_height: 200,		//the height of the preloading div, it show before the gallery
@@ -457,7 +457,7 @@ lightbox_textpanel_desc_text_align:null,			//textpanel description text align. i
 lightbox_textpanel_desc_font_size:null,				//textpanel description font size. if null - take from css
 lightbox_textpanel_desc_bold:null,					//textpanel description bold. if null - take from css
 lightbox_textpanel_css_description:{},				//textpanel additional css of the description
-        {% endfilter %}</pre>
+        {% endapply %}</pre>
     </div>    
     <p>You can read more and see a lot of examples at <a href="http://unitegallery.net">the UniteGallery website!</a></p>
 
