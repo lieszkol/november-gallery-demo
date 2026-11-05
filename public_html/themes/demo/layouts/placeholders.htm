@@ -83,6 +83,10 @@ default = 1
             "ftr";
     }
     header, main, aside, footer { min-width: 0; }
+    /* Let the gallery fill the header's full width at init (flex+center shrink-wrapped it,
+       so UniteGallery measured a tiny width and collapsed justified tiles to one column). */
+    header { display: block; }
+    header .ug-gallery-wrapper { margin: 0 auto; }
         </style>
     
         {% styles %}
@@ -114,6 +118,11 @@ default = 1
             &copy; {{ author }}
         </footer>
 		
+		{# Static-page components (e.g. the gallery snippet) run when {% component 'staticPage' %}
+		   renders above, which is AFTER the {% styles %} in <head>. So their addCss() assets
+		   (unite-gallery.css, which carries .ug-lightbox{position:fixed}) miss the head block.
+		   Emit styles again here, after the component has registered them, so the lightbox works. #}
+		{% styles %}
 		{% scripts %}
 
     </body>
