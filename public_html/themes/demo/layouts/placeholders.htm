@@ -70,6 +70,19 @@ default = 1
             dl dd {
             	grid-column-start: 3;
             }
+            /* Layout fix: the original grid used invalid values (minmax(1fr,auto) / minmax(10vw auto)),
+       which browsers discard, so areas collapsed and the gallery overlapped the content.
+       Override with a valid single-column stack: gallery (header) full-width above the story. */
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "hdr"
+            "info"
+            "content"
+            "ftr";
+    }
+    header, main, aside, footer { min-width: 0; }
         </style>
     
         {% styles %}
